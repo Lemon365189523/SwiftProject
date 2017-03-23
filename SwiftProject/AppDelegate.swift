@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,10 +17,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
         
+//        let home = LMBasicViewController()
+//        let homeNavi = UINavigationController.init(rootViewController: home)
+//        self.setTabBarItem(vc: homeNavi, params: ["首页","nav_bg_1_1","nav_bg_1_2"])
+//        
+//        let vc2 = LMBasicViewController()
+//        let navi2 = UINavigationController.init(rootViewController: vc2)
+//        self.setTabBarItem(vc: navi2, params: ["分类","nav_bg_2_1", "nav_bg_2_2" ])
+//        
+//        let vc3 = LMBasicViewController()
+//        let navi3 = UINavigationController.init(rootViewController: vc3)
+//        self.setTabBarItem(vc: navi3, params: ["购物车","nav_bg_4_1", "nav_bg_4_2" ])
+//        
+//        let vc4 = LMBasicViewController()
+//        let navi4 = UINavigationController.init(rootViewController: vc4)
+//        self.setTabBarItem(vc: navi4, params: ["我的","nav_bg_5_1", "nav_bg_5_2"])
+//        
+//        let navArray = [homeNavi, navi2, navi3, navi4]
+//        let tabBarController = LMTabBarController()
+//        
+//        //改变tabBar选中标题颜色
+//        tabBarController.tabBar.tintColor = UIColor.green
+//        
+//        tabBarController.viewControllers = navArray
+        let loginVC = LMLoginVC()
+        
+        self.window?.rootViewController = loginVC
+        self.window?.makeKeyAndVisible()
         
         return true
     }
+    
+    func setTabBarItem(vc: UIViewController, params: [String])  {
+        vc.tabBarItem.title = params[0]
+        vc.tabBarItem.image = UIImage.init(named: params[1])?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.selectedImage = UIImage.init(named: params[2])?.withRenderingMode(.alwaysOriginal)
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

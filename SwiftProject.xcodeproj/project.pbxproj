@@ -16,6 +16,11 @@
 		8F1F5F7B1E7185B7009771D5 /* LMBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F7A1E7185B7009771D5 /* LMBasicViewController.swift */; };
 		8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F7C1E7185DC009771D5 /* LMTabBarController.swift */; };
 		D8992B2B28CEEC56CA3CFA97 /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */; };
+		F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA591E837F0500746158 /* LMLoginVC.swift */; };
+		F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5D1E837F1800746158 /* LMLoginModel.swift */; };
+		F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */; };
+		F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA611E837FB000746158 /* LMLoginView.swift */; };
+		F7612F3D1E83B48700E50C00 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7612F3C1E83B48700E50C00 /* Header.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		B8E2B38E9B144D7CDE4BEF04 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E70A1AC1F994421176BCA32A /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F5D3897B7648942364B164F2 /* Pods-SwiftProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F71AEA591E837F0500746158 /* LMLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginVC.swift; sourceTree = "<group>"; };
+		F71AEA5D1E837F1800746158 /* LMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginModel.swift; sourceTree = "<group>"; };
+		F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginViewModel.swift; sourceTree = "<group>"; };
+		F71AEA611E837FB000746158 /* LMLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginView.swift; sourceTree = "<group>"; };
+		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF10364E74FD2AEBA1EA4A65 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +140,9 @@
 				8F1F5F741E7181FE009771D5 /* Public */,
 				8F1F5F751E718204009771D5 /* SingleCase */,
 				8F1F5F761E71820B009771D5 /* Tools */,
+				F71AEA561E837F0500746158 /* Login */,
 				8F1F5F431E7180EE009771D5 /* AppDelegate.swift */,
+				F7612F3C1E83B48700E50C00 /* Header.swift */,
 				8F1F5F4A1E7180EE009771D5 /* Assets.xcassets */,
 				8F1F5F4C1E7180EE009771D5 /* LaunchScreen.storyboard */,
 				8F1F5F4F1E7180EE009771D5 /* Info.plist */,
@@ -211,6 +223,49 @@
 				B8E2B38E9B144D7CDE4BEF04 /* Pods-SwiftProjectUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F71AEA561E837F0500746158 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F71AEA571E837F0500746158 /* Models */,
+				F71AEA581E837F0500746158 /* ViewControllers */,
+				F71AEA5A1E837F0500746158 /* ViewModels */,
+				F71AEA5B1E837F0500746158 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F71AEA571E837F0500746158 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F71AEA5D1E837F1800746158 /* LMLoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F71AEA581E837F0500746158 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F71AEA591E837F0500746158 /* LMLoginVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F71AEA5A1E837F0500746158 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F71AEA5B1E837F0500746158 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F71AEA611E837FB000746158 /* LMLoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,9 +549,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
+				F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
+				F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */,
+				F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */,
 				8F1F5F7B1E7185B7009771D5 /* LMBasicViewController.swift in Sources */,
 				8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */,
+				F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +701,8 @@
 			baseConfigurationReference = 9214216AD84F0E52F37FDFBB /* Pods-SwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -655,6 +717,8 @@
 			baseConfigurationReference = E70A1AC1F994421176BCA32A /* Pods-SwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
