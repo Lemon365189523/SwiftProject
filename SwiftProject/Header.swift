@@ -10,11 +10,11 @@ import Foundation
 
 import SnapKit
 
-import ReactiveCocoa
-
 import Alamofire
 
 import SwiftyJSON
 
+import ReactiveSwift
 
+import Result
 

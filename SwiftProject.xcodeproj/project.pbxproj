@@ -20,6 +20,7 @@
 		F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5D1E837F1800746158 /* LMLoginModel.swift */; };
 		F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */; };
 		F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA611E837FB000746158 /* LMLoginView.swift */; };
+		F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */; };
 		F7612F3D1E83B48700E50C00 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7612F3C1E83B48700E50C00 /* Header.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		F71AEA5D1E837F1800746158 /* LMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginModel.swift; sourceTree = "<group>"; };
 		F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginViewModel.swift; sourceTree = "<group>"; };
 		F71AEA611E837FB000746158 /* LMLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginView.swift; sourceTree = "<group>"; };
+		F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMKeyboardProtocol.swift; sourceTree = "<group>"; };
 		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF10364E74FD2AEBA1EA4A65 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		8F1F5F731E7181F6009771D5 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
+				F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */,
 				F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
 				F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */,
@@ -709,6 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.www.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -725,6 +730,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.www.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

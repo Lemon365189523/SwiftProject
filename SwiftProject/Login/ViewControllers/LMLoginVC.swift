@@ -10,6 +10,7 @@ import UIKit
 
 class LMLoginVC: UIViewController {
     lazy var loginView: LMLoginView = LMLoginView()
+    var loginViewModel : LMLoginViewModel = LMLoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,9 @@ class LMLoginVC: UIViewController {
         loginView.snp.makeConstraints { (make) in
             make.edges.equalTo(0)
         }
+        loginView.viewModel = loginViewModel
         
+      
     }
 
  

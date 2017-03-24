@@ -7,7 +7,13 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
 
 class LMLoginViewModel: NSObject {
-
+    var userName : String?
+    var userPw : String?
+    
+    
+    
 }
