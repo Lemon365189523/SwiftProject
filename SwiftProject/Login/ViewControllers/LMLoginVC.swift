@@ -20,7 +20,7 @@ class LMLoginVC: UIViewController {
         }
         loginView.viewModel = loginViewModel
         
-      
+
     }
 
  

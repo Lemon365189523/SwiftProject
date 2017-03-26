@@ -19,7 +19,7 @@ class LMLoginView: UIView {
     let loginBtn : UIButton = UIButton()
     var viewModel : LMLoginViewModel? = nil{
         didSet(oldValue){
-//            self.bindSignal()
+            self.bindSignal()
         }
     }
     
@@ -82,8 +82,8 @@ class LMLoginView: UIView {
         }
         
         loginBtn.setTitle("login in", for: .normal)
-        loginBtn.backgroundColor = UIColor.blue
         loginBtn.setTitleColor(UIColor.white, for: .normal)
+        loginBtn.backgroundColor = UIColor.lightGray
         contentView.addSubview(loginBtn)
         loginBtn.snp.makeConstraints { (make) in
             make.left.equalTo(20)
@@ -93,73 +93,21 @@ class LMLoginView: UIView {
             make.top.equalTo(pwTF.snp.bottom).offset(20)
         }
         
-//        self.bindSignal1()
-        self.bindSignal3()
     }
     
-    func bindSignal1(){
-        //1.冷信号
-        let producer = SignalProducer<String, NoError>.init { (observer, _) in
-            print("新的订阅，启动操作")
-            observer.send(value: "Hello")
-            observer.send(value: "World")
-            observer.sendCompleted()
-        }
-        
-        //创建观察者 (多个观察者观察会有副作用)
-        let sub1 = Observer<String, NoError>(value: {
-            print("观察者1接受信号\($0)")
+    func bindSignal() {
+        guard viewModel == nil else {return}
+        viewModel!.userName <~ nameTF.reactive.continuousTextValues
+        viewModel!.userPw <~ pwTF.reactive.continuousTextValues
+        loginBtn.reactive.isEnabled <~ viewModel!.logainSsEnabled
+        let _ = viewModel?.logainSsEnabled.signal.observeValues({[weak self] (enable) in
+            self?.loginBtn.backgroundColor = enable ? UIColor.blue : UIColor.lightGray
         })
-        
-        let sub2 = Observer<String, NoError>(value: {
-            print("观察者1接受信号\($0)")
-        })
-        //观察者订阅信号
-        print("观察者1订阅信号")
-        producer.start(sub1)
-        print("观察者2订阅信号")
-        producer.start(sub2)
+        loginBtn.reactive.pressed = CocoaAction<UIButton>((viewModel?.logAction)!)
+    
+    }
+    
 
-        
-    }
-    
-    func bindSignal2(){
-        
-        //2.热信号 (通过管道创建)
-        let (signalA, observerA) = Signal<String, NoError>.pipe()
-        let (signalB, observerB) = Signal<Int, NoError>.pipe()
-        
-        Signal.combineLatest(signalA,signalB).observeValues { (value) in
-            print("两个热信号收到的值\(value.0) + \(value.1)")
-        }
-        //订阅信号要在send之前
-        signalA.observeValues { (value) in
-            print("signalA : \(value)")
-        }
-        
-        observerA.send(value: "sssss")
-        //        observerA.sendCompleted()
-        observerB.send(value: 2)
-        //        observerB.sendCompleted()
-        
-        observerB.send(value: 100)
-        //不sendCompleted和sendError 热信号一直激活
-        //        observerB.sendCompleted()
-    }
-    
-    func bindSignal3(){
-        //2文本输入框的监听
-        nameTF.reactive.continuousTextValues.observeValues { (text) in
-            print(text ?? "")
-            
-        }
-        //监听黏贴进来的文本
-        let result = nameTF.reactive.values(forKeyPath: "text")
-        result.start { (text) in
-            print(text)
-        }
-    }
-    
 }
 
 
