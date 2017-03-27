@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 protocol LMKeyboardProtocol {
 //    func addLayoutWithKeyboard(view: UIView) ;
@@ -17,7 +18,8 @@ protocol LMKeyboardProtocol {
 extension LMKeyboardProtocol {
     
     func addLayoutWithKeyboard(view: UIView) {
-
+        var bottomConstraint : Constraint?
+        //bottomConstraint.updateOffset(60) 可以这样单个约束更新
         NotificationCenter.default.reactive.notifications(forName: Notification.Name(rawValue: "UIKeyboardWillShowNotification"), object: nil).map({ (notification) -> (Double  , Double) in
             guard let rect = notification.userInfo?["UIKeyboardBoundsUserInfoKey"] as? CGRect,
                 let duration = notification.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Double
@@ -31,7 +33,7 @@ extension LMKeyboardProtocol {
             if Double(viewBottom) + height > kSreenHeight {
                 UIView.animate(withDuration: duration, animations: {
                     view.snp.makeConstraints({ (make) in
-                        make.bottom.equalTo(-height).priority(.required)
+                       bottomConstraint = make.bottom.equalTo(-height).priority(.required).constraint
                     })
                     guard let superView = view.superview else {
                         view.layoutIfNeeded()
@@ -55,8 +57,9 @@ extension LMKeyboardProtocol {
             
         }).observeValues { (duration, height) in
             UIView.animate(withDuration: duration, animations: {
+                guard let constraint = bottomConstraint else {return}
                 view.snp.updateConstraints({ (make) in
-//                    make.bottom.equalTo(0).priority(.low)
+                    constraint.deactivate()
                 })
                 guard let superView = view.superview else {
                     view.layoutIfNeeded()

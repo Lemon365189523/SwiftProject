@@ -9,6 +9,8 @@
 import UIKit
 import ReactiveSwift
 import Result
+import Alamofire
+import SwiftyJSON
 
 class LMLoginViewModel: NSObject {
     var userName: MutableProperty<String?> = MutableProperty<String?>(nil)
@@ -40,16 +42,39 @@ class LMLoginViewModel: NSObject {
                 self?.logainEnabled.value = false
                 return
             }
-            self?.logainEnabled.value = nameVerify > 5 && pwVerify > 5
+            self?.logainEnabled.value = nameVerify > 1 && pwVerify > 1
         }
         observer.send(value: userName.signal)
         observer.send(value:userPw.signal)
         observer.send(value: activation.output)
         observer.sendCompleted()
         
-        logAction.values.observeValues { (event) in
+        logAction.values.observeValues {[weak self] (event) in
             //做用户密码判断
-            
+            guard let name = self?.userName.value ,
+                let password = self?.userPw.value else {return}
+            if name == "lemon" && password == "123456"{
+                print("登录成功")
+                self!.loginIn()
+            }else {
+                print("账号密码错误")
+                //http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1
+            }
         }
     }
+    
+    private func loginIn(){
+        let url = "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1"
+        Alamofire.request(url, method: .post, parameters: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let value):
+                let json = JSON.init(value)
+                print(json)
+            case .failure(let error):
+                print("失败：\(error) ")
+            }
+
+        }
+    }
+    
 }

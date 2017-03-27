@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LMLoginModel: NSObject {
-
+    var userName : String!
+    
 }
