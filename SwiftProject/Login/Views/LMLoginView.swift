@@ -12,7 +12,7 @@ import ReactiveSwift
 import ReactiveCocoa
 import Result
 
-class LMLoginView: UIView {
+class LMLoginView: UIView , LMKeyboardProtocol{
     let contentView : UIView = UIView()
     let nameTF : UITextField = UITextField()
     let pwTF : UITextField = UITextField()
@@ -36,17 +36,24 @@ class LMLoginView: UIView {
     func setSubViews()  {
         self.addSubview(contentView)
         contentView.backgroundColor = UIColor.white
+        self.addLayoutWithKeyboard(view: contentView)
         contentView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self.snp.centerY)
+            make.centerY.equalTo(self.snp.centerY).priority(.medium)
             make.centerX.equalTo(self.snp.centerX)
             make.left.equalTo(20)
             make.right.equalTo(-20)
         }
         
+        
         let nameLB = UILabel()
         nameLB.text = "用户名:"
         let pwLB = UILabel()
         pwLB.text = "密    码:"
+        pwTF.keyboardType = .numberPad
+        pwTF.layer.borderWidth = 0.5
+        pwTF.layer.borderColor = UIColor.lightGray.cgColor
+        nameTF.layer.borderWidth = 0.5
+        nameTF.layer.borderColor = UIColor.lightGray.cgColor
         
         contentView.addSubview(nameLB)
         nameLB.sizeToFit()
@@ -83,7 +90,6 @@ class LMLoginView: UIView {
         
         loginBtn.setTitle("login in", for: .normal)
         loginBtn.setTitleColor(UIColor.white, for: .normal)
-        loginBtn.backgroundColor = UIColor.lightGray
         contentView.addSubview(loginBtn)
         loginBtn.snp.makeConstraints { (make) in
             make.left.equalTo(20)
@@ -92,22 +98,26 @@ class LMLoginView: UIView {
             make.height.equalTo(40)
             make.top.equalTo(pwTF.snp.bottom).offset(20)
         }
+
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEditing(_:)))
+        self.addGestureRecognizer(tap)
         
     }
     
     func bindSignal() {
-        guard viewModel == nil else {return}
+        if viewModel == nil  {return}
         viewModel!.userName <~ nameTF.reactive.continuousTextValues
         viewModel!.userPw <~ pwTF.reactive.continuousTextValues
-        loginBtn.reactive.isEnabled <~ viewModel!.logainSsEnabled
-        let _ = viewModel?.logainSsEnabled.signal.observeValues({[weak self] (enable) in
+        loginBtn.reactive.isEnabled <~ viewModel!.logainEnabled
+        _ = viewModel?.logainEnabled.signal.observeValues({[weak self] (enable) in
             self?.loginBtn.backgroundColor = enable ? UIColor.blue : UIColor.lightGray
         })
         loginBtn.reactive.pressed = CocoaAction<UIButton>((viewModel?.logAction)!)
-    
+        
+        //用来激活两个tf信号
+        viewModel?.activation.input.send(value: "start")
     }
     
-
 }
 
 

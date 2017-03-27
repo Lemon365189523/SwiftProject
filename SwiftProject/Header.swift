@@ -18,3 +18,8 @@ import ReactiveSwift
 
 import Result
 
+let kSreenHeight = Double(UIScreen.main.bounds.size.height)
+
+let kSreenWight = Double(UIScreen.main.bounds.size.width)
+
+
