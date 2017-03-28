@@ -8,6 +8,8 @@ target 'SwiftProject' do
   pod 'SwiftyJSON'
   pod 'SnapKit'
   pod 'ReactiveCocoa'
+  pod 'MBProgressHUD'
+  pod 'Kingfisher'
   # Pods for SwiftProject
 
   target 'SwiftProjectTests' do

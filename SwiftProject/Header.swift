@@ -22,4 +22,9 @@ let kSreenHeight = Double(UIScreen.main.bounds.size.height)
 
 let kSreenWight = Double(UIScreen.main.bounds.size.width)
 
+enum LMError: Error {
+    case requestError(domain: String)
+}
 
+
+let zhiboHttp = "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1"

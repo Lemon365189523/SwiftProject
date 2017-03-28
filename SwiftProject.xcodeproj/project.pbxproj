@@ -23,6 +23,7 @@
 		F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */; };
 		F7612F3D1E83B48700E50C00 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7612F3C1E83B48700E50C00 /* Header.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
+		F7ED0AB91E8A0FAB001B1959 /* LMHTTPRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED0AB81E8A0FAB001B1959 /* LMHTTPRequset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,9 @@
 		F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginViewModel.swift; sourceTree = "<group>"; };
 		F71AEA611E837FB000746158 /* LMLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginView.swift; sourceTree = "<group>"; };
 		F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMKeyboardProtocol.swift; sourceTree = "<group>"; };
+		F746AB041E8A629500355F88 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F7ED0AB81E8A0FAB001B1959 /* LMHTTPRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHTTPRequset.swift; sourceTree = "<group>"; };
 		F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF10364E74FD2AEBA1EA4A65 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +151,7 @@
 				8F1F5F4A1E7180EE009771D5 /* Assets.xcassets */,
 				8F1F5F4C1E7180EE009771D5 /* LaunchScreen.storyboard */,
 				8F1F5F4F1E7180EE009771D5 /* Info.plist */,
+				F746AB041E8A629500355F88 /* SwiftProject-Bridging-Header.h */,
 			);
 			path = SwiftProject;
 			sourceTree = "<group>";
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */,
+				F7ED0AB81E8A0FAB001B1959 /* LMHTTPRequset.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				TargetAttributes = {
 					8F1F5F3F1E7180EE009771D5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					8F1F5F531E7180EE009771D5 = {
@@ -558,6 +564,7 @@
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
 				F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */,
 				F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */,
+				F7ED0AB91E8A0FAB001B1959 /* LMHTTPRequset.swift in Sources */,
 				8F1F5F7B1E7185B7009771D5 /* LMBasicViewController.swift in Sources */,
 				8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */,
 				F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */,
@@ -705,6 +712,7 @@
 			baseConfigurationReference = 9214216AD84F0E52F37FDFBB /* Pods-SwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SwiftProject/Info.plist;
@@ -712,6 +720,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.www.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftProject/SwiftProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -722,6 +732,7 @@
 			baseConfigurationReference = E70A1AC1F994421176BCA32A /* Pods-SwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SwiftProject/Info.plist;
@@ -729,6 +740,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemon.www.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftProject/SwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

@@ -16,6 +16,7 @@ class LMLoginViewModel: NSObject {
     var userName: MutableProperty<String?> = MutableProperty<String?>(nil)
     var userPw : MutableProperty<String?> = MutableProperty<String?>(nil)
     var logainEnabled : MutableProperty<Bool> = MutableProperty<Bool>(false)
+
     //用来激活信号的
     var activation = Signal<String?, NoError>.pipe()
     
@@ -51,24 +52,27 @@ class LMLoginViewModel: NSObject {
         
         logAction.values.observeValues {[weak self] (event) in
             //做用户密码判断
+       
             guard let name = self?.userName.value ,
                 let password = self?.userPw.value else {return}
             if name == "lemon" && password == "123456"{
                 print("登录成功")
                 self!.loginIn()
+      
             }else {
-                print("账号密码错误")
-                //http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1
+    
+               
             }
         }
     }
     
     private func loginIn(){
-        let url = "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1"
+        let url = "http://www.lemon.com/login"
         Alamofire.request(url, method: .post, parameters: nil).responseJSON { (response) in
             switch response.result{
             case .success(let value):
                 let json = JSON.init(value)
+          
                 print(json)
             case .failure(let error):
                 print("失败：\(error) ")
