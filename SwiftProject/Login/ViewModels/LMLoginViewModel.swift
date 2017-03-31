@@ -62,7 +62,11 @@ class LMLoginViewModel: NSObject {
             }
             if name == "Lemon" && password == "123456"{
                 
-                self!.loginIn()
+                //self!.loginIn()
+                guard let loginSuccessBlock = self?.loginSuccessBlock else{
+                    return
+                }
+                loginSuccessBlock(JSON.init(parseJSON: "ddddd"))
                 
             }else {
                 guard let loginErrorBlock =  self?.loginErrorBlock else{

@@ -1,5 +1,5 @@
 //
-//  LMFlowCollectionVIew.swift
+//  LMFlowCollectionView.swift
 //  SwiftProject
 //
 //  Created by KADFWJ on 2017/3/31.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LMFlowCollectionVIew: UICollectionView {
+class LMFlowCollectionView: UICollectionView {
 
     init(frame: CGRect){
         let layout = UICollectionViewLayout()
@@ -24,7 +24,7 @@ class LMFlowCollectionVIew: UICollectionView {
 }
 
 
-extension LMFlowCollectionVIew : UICollectionViewDataSource, UICollectionViewDelegate{
+extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -39,7 +39,7 @@ extension LMFlowCollectionVIew : UICollectionViewDataSource, UICollectionViewDel
 }
 
 
-extension LMFlowCollectionViewCell : UICollectionViewDelegateFlowLayout {
+extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
     
     ///每个cell的size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

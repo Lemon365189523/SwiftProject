@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Pods-SwiftProject.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -57,12 +67,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>044B944A2C8657161FE15D74F413EAEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>08CA69347C0E96CBC6E206DA3670E5C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>189568B53813717F6F5EE90A247487CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1DBE879058A523FAA67AF7B1AC765E6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C3BDF332EEC8634A7BE0246FA15DE3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E2B7FBC907CBBDABF8365DEB452D520</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>74755B85513AAE14291DB95D9C1C72FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>788654D17A891F01218E16B340F1EABF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F1ED0DB85CD01E6DDC1ACAE595F0948</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,6 +138,11 @@
 			<true/>
 		</dict>
 		<key>B8AB5167D4B6C7045F86401B85265E46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
