@@ -109,10 +109,14 @@ class LMLoginView: UIView , LMKeyboardProtocol{
         viewModel!.userName <~ nameTF.reactive.continuousTextValues
         viewModel!.userPw <~ pwTF.reactive.continuousTextValues
         loginBtn.reactive.isEnabled <~ viewModel!.logainEnabled
+        /*
+         loginBtn.reactive.isEnabled <~ Signal.combineLatest(nameTF.reactive.continuousTextValues,pwTF.reactive.continuousTextValues).map { $0?.characters.count ?? 0 >= 6 && $1?.characters.count ?? 0 >= 6
+         }
+         */
         _ = viewModel?.logainEnabled.signal.observeValues({[weak self] (enable) in
             self?.loginBtn.backgroundColor = enable ? UIColor.blue : UIColor.lightGray
         })
-        loginBtn.reactive.pressed = CocoaAction<UIButton>((viewModel?.logAction)!)
+        loginBtn.reactive.pressed = CocoaAction<UIButton>((viewModel?.loginAction)!)
         
         //用来激活两个tf信号
         viewModel?.activation.input.send(value: "start")

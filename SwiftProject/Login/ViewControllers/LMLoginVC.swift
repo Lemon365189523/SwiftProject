@@ -19,7 +19,20 @@ class LMLoginVC: UIViewController {
             make.edges.equalTo(0)
         }
         loginView.viewModel = loginViewModel
-     
+        
+
+        loginViewModel.loginWithToken(loginSuccessBlock: { (data) in
+            let main = LMTabBarController()
+            UIApplication.shared.keyWindow?.rootViewController = main
+            UIApplication.shared.keyWindow?.makeKeyAndVisible()
+        }) { (error) in
+            print(error)
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = .text;
+            hud.label.text = error.domain
+            hud.hide(animated: true, afterDelay: 1)
+            
+        }
     }
 
  

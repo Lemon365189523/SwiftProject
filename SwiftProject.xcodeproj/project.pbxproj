@@ -13,7 +13,6 @@
 		8F1F5F4E1E7180EE009771D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F5F4C1E7180EE009771D5 /* LaunchScreen.storyboard */; };
 		8F1F5F591E7180EE009771D5 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F581E7180EE009771D5 /* SwiftProjectTests.swift */; };
 		8F1F5F641E7180EE009771D5 /* SwiftProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F631E7180EE009771D5 /* SwiftProjectUITests.swift */; };
-		8F1F5F7B1E7185B7009771D5 /* LMBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F7A1E7185B7009771D5 /* LMBasicViewController.swift */; };
 		8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F7C1E7185DC009771D5 /* LMTabBarController.swift */; };
 		D8992B2B28CEEC56CA3CFA97 /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */; };
 		F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA591E837F0500746158 /* LMLoginVC.swift */; };
@@ -24,6 +23,14 @@
 		F7612F3D1E83B48700E50C00 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7612F3C1E83B48700E50C00 /* Header.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
 		F7ED0AB91E8A0FAB001B1959 /* LMHTTPRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED0AB81E8A0FAB001B1959 /* LMHTTPRequset.swift */; };
+		F7F206251E8E2E5300F374ED /* LMBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206241E8E2E5300F374ED /* LMBasicViewController.swift */; };
+		F7F2062C1E8E36F100F374ED /* LMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F2062B1E8E36F100F374ED /* LMHomeViewController.swift */; };
+		F7F2062E1E8E3D4D00F374ED /* LMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F2062D1E8E3D4D00F374ED /* LMTabBar.swift */; };
+		F7F206321E8E511C00F374ED /* LMHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206311E8E511C00F374ED /* LMHomeViewModel.swift */; };
+		F7F206341E8E512D00F374ED /* LMHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206331E8E512D00F374ED /* LMHomeModel.swift */; };
+		F7F206361E8E538800F374ED /* LMHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206351E8E538800F374ED /* LMHomeView.swift */; };
+		F7F206381E8E56C500F374ED /* LMFlowCollectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206371E8E56C500F374ED /* LMFlowCollectionVIew.swift */; };
+		F7F2063A1E8E5D9100F374ED /* LMFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206391E8E5D9100F374ED /* LMFlowCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +65,6 @@
 		8F1F5F5F1E7180EE009771D5 /* SwiftProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1F5F631E7180EE009771D5 /* SwiftProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProjectUITests.swift; sourceTree = "<group>"; };
 		8F1F5F651E7180EE009771D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F1F5F7A1E7185B7009771D5 /* LMBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMBasicViewController.swift; sourceTree = "<group>"; };
 		8F1F5F7C1E7185DC009771D5 /* LMTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTabBarController.swift; sourceTree = "<group>"; };
 		9214216AD84F0E52F37FDFBB /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B8E2B38E9B144D7CDE4BEF04 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +78,14 @@
 		F746AB041E8A629500355F88 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F7ED0AB81E8A0FAB001B1959 /* LMHTTPRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHTTPRequset.swift; sourceTree = "<group>"; };
+		F7F206241E8E2E5300F374ED /* LMBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMBasicViewController.swift; sourceTree = "<group>"; };
+		F7F2062B1E8E36F100F374ED /* LMHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHomeViewController.swift; sourceTree = "<group>"; };
+		F7F2062D1E8E3D4D00F374ED /* LMTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTabBar.swift; sourceTree = "<group>"; };
+		F7F206311E8E511C00F374ED /* LMHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHomeViewModel.swift; sourceTree = "<group>"; };
+		F7F206331E8E512D00F374ED /* LMHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHomeModel.swift; sourceTree = "<group>"; };
+		F7F206351E8E538800F374ED /* LMHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMHomeView.swift; sourceTree = "<group>"; };
+		F7F206371E8E56C500F374ED /* LMFlowCollectionVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowCollectionVIew.swift; sourceTree = "<group>"; };
+		F7F206391E8E5D9100F374ED /* LMFlowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF10364E74FD2AEBA1EA4A65 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +160,7 @@
 				8F1F5F751E718204009771D5 /* SingleCase */,
 				8F1F5F761E71820B009771D5 /* Tools */,
 				F71AEA561E837F0500746158 /* Login */,
+				F7F206261E8E36CF00F374ED /* Main */,
 				8F1F5F431E7180EE009771D5 /* AppDelegate.swift */,
 				F7612F3C1E83B48700E50C00 /* Header.swift */,
 				8F1F5F4A1E7180EE009771D5 /* Assets.xcassets */,
@@ -200,8 +215,11 @@
 		8F1F5F741E7181FE009771D5 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				8F1F5F7A1E7185B7009771D5 /* LMBasicViewController.swift */,
 				8F1F5F7C1E7185DC009771D5 /* LMTabBarController.swift */,
+				F7F206241E8E2E5300F374ED /* LMBasicViewController.swift */,
+				F7F2062D1E8E3D4D00F374ED /* LMTabBar.swift */,
+				F7F206371E8E56C500F374ED /* LMFlowCollectionVIew.swift */,
+				F7F206391E8E5D9100F374ED /* LMFlowCollectionViewCell.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -272,6 +290,49 @@
 			isa = PBXGroup;
 			children = (
 				F71AEA611E837FB000746158 /* LMLoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7F206261E8E36CF00F374ED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F7F206271E8E36CF00F374ED /* Models */,
+				F7F206281E8E36CF00F374ED /* ViewControllers */,
+				F7F206291E8E36CF00F374ED /* ViewModels */,
+				F7F2062A1E8E36CF00F374ED /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F7F206271E8E36CF00F374ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7F206331E8E512D00F374ED /* LMHomeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7F206281E8E36CF00F374ED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7F2062B1E8E36F100F374ED /* LMHomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F7F206291E8E36CF00F374ED /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F7F206311E8E511C00F374ED /* LMHomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F7F2062A1E8E36CF00F374ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7F206351E8E538800F374ED /* LMHomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -560,12 +621,19 @@
 			files = (
 				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
 				F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */,
+				F7F2062E1E8E3D4D00F374ED /* LMTabBar.swift in Sources */,
 				F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
+				F7F2063A1E8E5D9100F374ED /* LMFlowCollectionViewCell.swift in Sources */,
+				F7F206251E8E2E5300F374ED /* LMBasicViewController.swift in Sources */,
+				F7F206361E8E538800F374ED /* LMHomeView.swift in Sources */,
+				F7F206321E8E511C00F374ED /* LMHomeViewModel.swift in Sources */,
+				F7F206341E8E512D00F374ED /* LMHomeModel.swift in Sources */,
 				F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */,
 				F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */,
+				F7F2062C1E8E36F100F374ED /* LMHomeViewController.swift in Sources */,
 				F7ED0AB91E8A0FAB001B1959 /* LMHTTPRequset.swift in Sources */,
-				8F1F5F7B1E7185B7009771D5 /* LMBasicViewController.swift in Sources */,
+				F7F206381E8E56C500F374ED /* LMFlowCollectionVIew.swift in Sources */,
 				8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */,
 				F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */,
 			);
