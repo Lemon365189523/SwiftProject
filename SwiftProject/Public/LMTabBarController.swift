@@ -44,9 +44,6 @@ class LMTabBarController: UITabBarController {
         
     }
     
-    func selectCenterBtn(){
-        
-    }
 }
 
 
@@ -83,14 +80,12 @@ extension LMTabBarController {
         tabbar.tabbarDelegate = self
         self.setValue(tabbar, forKey: "tabBar")
         viewControllers = navArray
-        
     }
     
     func setTabBarItem(vc: UIViewController,title: String , normalImage: UIImage, selectImage: UIImage)  {
         vc.tabBarItem.title = title
         vc.tabBarItem.image = normalImage.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.selectedImage = selectImage.withRenderingMode(.alwaysOriginal)
-        
         
     }
 }

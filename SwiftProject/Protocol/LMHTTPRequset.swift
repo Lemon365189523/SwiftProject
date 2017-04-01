@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
-//使用面向协议编程封装 网络请求
+//MARK -- 使用面向协议编程封装 网络请求 喵神的博客
 enum HTTPMethod: String {
     case GET
     case POST
@@ -48,7 +50,7 @@ struct UserRequest: Request {
     func parse(data: Data) -> LMLoginModel? {
         return LMLoginModel(data: data)
     }
-
+    
 }
 
 extension Request{
@@ -74,5 +76,38 @@ extension Request{
         task.resume()
     }
 }
+///Mark --
+class LMHttpRequset: NSObject {
+    class func GET(url:String ,parameters: [String: Any]?, successBlock:@escaping ((_ data: JSON)->Void),errorBlock:@escaping ((_ error:NSError)->Void)){
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let value):
+                let json = JSON.init(value)
+                successBlock(json)
+            case .failure(let error):
+             
+                let err = NSError.error(from: error)
+                errorBlock(err)
+            }
+            
+        }
+    }
+    
+    class func POST(url:String ,parameters: [String: Any]?, successBlock:@escaping ((_ data: JSON)->Void),errorBlock:@escaping ((_ error:NSError)->Void)){
+        Alamofire.request(url, method: .post, parameters: nil).responseJSON { (response) in
+            switch response.result{
+            case .success(let value):
+                let json = JSON.init(value)
+                successBlock(json)
+            case .failure(let error):
+                
+                let err = NSError.error(from: error)
+                errorBlock(err)
+            }
+            
+        }
+    }
+}
+
 
 

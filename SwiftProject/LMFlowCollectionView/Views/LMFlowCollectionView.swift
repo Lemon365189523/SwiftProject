@@ -9,12 +9,17 @@
 import UIKit
 
 class LMFlowCollectionView: UICollectionView {
-
+    
+    var flowDataArray : [LMFlowCellDataModel]?
+    
+    
     init(frame: CGRect){
-        let layout = UICollectionViewLayout()
+        //一定要用UICollectionViewLayout的子类 UICollectionViewFlowLayout 或自己继承UICollectionViewLayout重写方法
+        let layout = UICollectionViewFlowLayout()
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
+        self.register(LMFlowCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,16 +28,26 @@ class LMFlowCollectionView: UICollectionView {
 
 }
 
+extension LMFlowCollectionViewCell {
+    func setCollectionViewData(viewData:LMFlowDataModel)  {
+        
+    }
+}
 
 extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDelegate{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
+        let cell : LMFlowCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LMFlowCollectionViewCell 
+//        let model = LMFlowCellDataModel(row: indexPath.row)
+//        cell.setDataModel(model: model)
         return cell
     }
     
@@ -49,7 +64,7 @@ extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
     ///设置每组section的边界
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets.zero
+        return UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
     ///cell的最小行间隔

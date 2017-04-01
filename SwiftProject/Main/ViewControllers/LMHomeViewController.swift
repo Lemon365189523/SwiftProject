@@ -9,9 +9,24 @@
 import UIKit
 
 class LMHomeViewController: UIViewController {
-
+    lazy var conllectionView: LMFlowCollectionView = {
+        let view = LMFlowCollectionView.init(frame: CGRect.zero)
+        view.backgroundColor = UIColor.groupTableViewBackground
+        return view
+    }()
+    
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        view.addSubview(conllectionView)
+        conllectionView.snp.makeConstraints { (make) in
+            make.edges.equalTo(0)
+        }
+        
+        
 
         
     }
