@@ -7,14 +7,23 @@
 //
 
 import Foundation
-
+import SwiftyJSON
 
 protocol LMFlowDataServer {
-    func parseFlowData(data: Data) -> [LMFlowDataModel]
+    
 }
 
 extension LMFlowDataServer{
     
-    
+    func parseFlowData(json: JSON?) -> [LMFlowDataModel?]{
+        let array = json?["data"]
+        var modelArr = [LMFlowDataModel?]()
+        for (_, item) in array! {
+            modelArr.append(LMFlowDataModel.init(json: item))
+        }
+        return modelArr
+    }
     
 }
+
+

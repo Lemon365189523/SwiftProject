@@ -10,6 +10,7 @@ target 'SwiftProject' do
   pod 'ReactiveCocoa'
   pod 'MBProgressHUD'
   pod 'Kingfisher'
+  pod 'HandyJSON'
   # Pods for SwiftProject
 
   target 'SwiftProjectTests' do

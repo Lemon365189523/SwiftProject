@@ -30,4 +30,19 @@ struct LMLoginModel {
         self.userName = name
         
     }
+    
+    ///MARK -- JSON转模型
+    init?(json: JSON) {
+        guard let name = json["name"].string else {
+            return nil
+        }
+        
+        guard let message = json["message"].string else {
+            return nil
+        }
+        
+        self.message = message
+        self.userName = name
+        
+    }
 }

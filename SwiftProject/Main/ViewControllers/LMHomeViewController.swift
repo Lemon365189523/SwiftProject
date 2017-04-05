@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LMHomeViewController: UIViewController {
+class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataServer {
     lazy var conllectionView: LMFlowCollectionView = {
         let view = LMFlowCollectionView.init(frame: CGRect.zero)
         view.backgroundColor = UIColor.groupTableViewBackground
@@ -26,7 +26,17 @@ class LMHomeViewController: UIViewController {
             make.edges.equalTo(0)
         }
         
-        
+        //请求配置文件
+        getHomeLayout {[weak self] (json, error) in
+            if error == nil {
+               //LMFlowDataServer协议解析数据然后返回给collectionView
+                //配置文件只加载一次 
+                let modelArr = self?.parseFlowData(json: json)
+                self?.conllectionView.setCollectionViewData(viewData: modelArr as! [LMFlowDataModel])
+            }else{
+                
+            }
+        }
 
         
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class LMFlowCollectionView: UICollectionView {
     
-    var flowDataArray : [LMFlowCellDataModel]?
+    var flowDataArray : [LMFlowDataModel?]?
     
     
     init(frame: CGRect){
@@ -25,29 +25,35 @@ class LMFlowCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-}
-
-extension LMFlowCollectionViewCell {
-    func setCollectionViewData(viewData:LMFlowDataModel)  {
+    
+    func setCollectionViewData(viewData:[LMFlowDataModel?])  {
         
+        flowDataArray = viewData
+        
+        self.reloadData()
+    
+        print("\(viewData)")
     }
 }
+
+
 
 extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDelegate{
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        guard let array = flowDataArray else {
+            return 0
+        }
+        return array.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : LMFlowCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LMFlowCollectionViewCell 
-//        let model = LMFlowCellDataModel(row: indexPath.row)
-//        cell.setDataModel(model: model)
+        guard let cellData = flowDataArray?[indexPath.row]?.cellData else {
+            return cell
+        }
+        cell.setDataModel(model: cellData)
         return cell
     }
     

@@ -27,7 +27,7 @@ class LMLoginViewModel: NSObject {
             observer.sendCompleted()
         }
     }
-
+    
     
     let (loginSignal, loginObserver) = Signal<Any, NSError>.pipe()
     
@@ -98,6 +98,7 @@ class LMLoginViewModel: NSObject {
 
         }
     }
+    
     
     
     var loginSuccessBlock : ((_ data: JSON)->Void)?
