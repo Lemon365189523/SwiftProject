@@ -12,6 +12,7 @@ import Foundation
 struct LMFlowCellDataModel {
     var row : Int
     var className : String
+    var data : Dictionary<String, Any>
 }
 
 
