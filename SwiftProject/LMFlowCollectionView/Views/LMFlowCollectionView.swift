@@ -19,7 +19,7 @@ class LMFlowCollectionView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
-        self.register(LMFlowCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        self.register(LMFlowCollectionViewCell.self, forCellWithReuseIdentifier: "LMFlowCollectionViewCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +29,16 @@ class LMFlowCollectionView: UICollectionView {
     func setCollectionViewData(viewData:[LMFlowDataModel?])  {
         
         flowDataArray = viewData
-        
+        for item in flowDataArray! {
+            guard let className = item?.className else {
+                continue
+            }
+            let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+            let clsName = namespace + "." + className
+            
+            self.register(NSClassFromString(clsName).self, forCellWithReuseIdentifier: className)
+//            self.register(LMDefaultImageViewCell.self, forCellWithReuseIdentifier: className)
+        }
         self.reloadData()
     
         print("\(viewData)")
@@ -49,11 +58,19 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : LMFlowCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LMFlowCollectionViewCell 
-        guard let cellData = flowDataArray?[indexPath.row]?.cellData else {
+        guard let model = flowDataArray?[indexPath.row] else {
+            return LMFlowCollectionViewCell()
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.className!, for: indexPath)
+        guard let cellData = model.cellData else {
             return cell
         }
-        cell.setDataModel(model: cellData)
+        if let bgColor = model.backgroundColor {
+            cell.backgroundColor =  UIColor.colorWithHexString(hex: bgColor)
+        }
+        
+        //cell.setDataModel(model: cellData)
+        
         return cell
     }
     
@@ -64,7 +81,10 @@ extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
     
     ///每个cell的size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 100, height: 100)
+        guard let model = flowDataArray?[indexPath.row] else {
+            return CGSize.zero
+        }
+        return CGSize.init(width: Double(model.cellWidth!), height: Double(model.cellHeight!))
     }
     
     ///设置每组section的边界
@@ -75,11 +95,11 @@ extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
     
     ///cell的最小行间隔
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     ///cell的最小列间隔
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }

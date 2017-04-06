@@ -9,11 +9,16 @@
 import Foundation
 import SwiftyJSON
 
-protocol LMFlowDataServer {
+protocol LMFlowDataProtocol {
     
 }
 
-extension LMFlowDataServer{
+struct  LMFlowDataServer : LMFlowDataProtocol{
+    
+    
+}
+
+extension LMFlowDataProtocol{
     
     func parseFlowData(json: JSON?) -> [LMFlowDataModel?]{
         let array = json?["data"]

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataServer {
+class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataProtocol {
     lazy var conllectionView: LMFlowCollectionView = {
         let view = LMFlowCollectionView.init(frame: CGRect.zero)
         view.backgroundColor = UIColor.groupTableViewBackground

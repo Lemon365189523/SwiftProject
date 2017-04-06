@@ -16,29 +16,49 @@ import SwiftyJSON
 struct LMFlowDataModel {
     var className : String?
 //    var indexPath : NSIndexPath
-    var cellWidth : Float? = 0
-    var cellHeight : Float? = 0
+    var cellWidth : Double? = 0
+    var cellHeight : Double? = 0
     var cellData : Dictionary<String, JSON>?
+    var cellId : String? = "" 
+    var backgroundColor : String? = "ffffff"
     
     init?(json:JSON?) {
         guard let json = json else {
             return nil
         }
         
-//        guard let indexPath = json["indexPath"].object as? NSIndexPath else {
-//            return nil
-//        }
-        guard let className = json["className"].string,
-            let data = json["cellData"].dictionary else {
-            return nil
+        if let className = json["className"].string{
+            self.className = className
+        }
+        
+        if  let data = json["cellData"].dictionary{
+            self.cellData = data
+        }
+        
+        if var cellHeight = json["cellHeight"].string {
+            if cellHeight.hasSuffix("%") {
+                cellHeight.remove(at: cellHeight.index(before: cellHeight.endIndex))
+                self.cellHeight = Double(kSreenHeight * Double(cellHeight)! / 100.0)
+            }else{
+                self.cellHeight = Double(cellHeight)
+            }
+        }
+        
+        if var cellWidth = json["cellWidth"].string {
+            if cellWidth.hasSuffix("%") {
+                cellWidth.remove(at: cellWidth.index(before: cellWidth.endIndex))
+                self.cellWidth = Double(kSreenWight * Double(cellWidth)! / 100.0)
+            }else{
+                self.cellWidth = Double(cellWidth)
+            }
         }
         
         
-
+        if let bgColor = json["backgroundColor"].string {
+            backgroundColor = bgColor
+        }
         
-//        self.indexPath = indexPath
-        self.className = className
-        self.cellData = data
+        
     }
 }
 
