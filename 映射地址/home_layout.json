@@ -1,3 +1,52 @@
 {
-	
+	"data": [
+		{
+			"className": "LMTextCell",
+			"cellHeight": "0",
+			"cellWidth" : "100%",
+			"backgroundColor" : "203040",
+			"cellData" :{
+				"text" : "和 C 一样，Swift 用变量存储和调用值，通过变量名来做区分。Swift 中也大量采用了值不可变的变量。它们就是所谓的常量，但是它们比 C 中的常量更加给力。当你所处理的值不需要更改时，使用常量会让你的代码更加安全、简洁地表达你的意图。"
+			}
+		},
+		{
+			"className": "LMDefaultImageViewCell",
+			"cellHeight": "30%",
+			"cellWidth" : "70%",
+			"backgroundColor" : "090203",
+			"clickAction":"1",
+			"cellData" : {
+				"imageName":"http://ons1ui5s6.bkt.clouddn.com/image/lemoniconlemon.png"
+			}
+		},
+		{
+			"className": "LMDefaultImageViewCell",
+			"cellHeight": "30%",
+			"cellWidth" : "30%",
+			"backgroundColor" : "980303",
+			"clickAction":"2",
+			"cellData" :{
+				"imageName":"http://ons1ui5s6.bkt.clouddn.com/image/lemonicon.png"
+			}
+		},
+		{
+			"className": "LMDefaultImageViewCell",
+			"cellHeight": "160",
+			"cellWidth" : "100%",
+			"backgroundColor" : "343636",
+			"cellData" :{
+				"imageName" : "http://ons1ui5s6.bkt.clouddn.com/image/lemoniconlemon.png"
+			}
+		},
+		{
+			"className": "LMTextCell",
+			"cellHeight": "0",
+			"cellWidth" : "100%",
+			"backgroundColor" : "203040",
+			"cellData" :{
+				"text" : "jdfajdkfsjldfljsdfdsfas开发的就是开发两个极乐世界是解放路双方各来反馈给；的dfafdsafdas"
+			}
+		}
+
+	]
 }

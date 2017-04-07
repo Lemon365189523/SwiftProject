@@ -9,25 +9,30 @@
 import UIKit
 import SwiftyJSON
 
-class LMFlowCollectionViewCell: UICollectionViewCell  {
+class LMFlowCollectionViewCell: UICollectionViewCell, LMFlowCellProtocol {
     
-    var dataModel : Dictionary<String, JSON>?
+    var dataModel : LMFlowDataModel?
     
+    //var delegate : LMFlowDataProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
-
+        setupSubView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDataModel(model: Dictionary<String, JSON>){
+    func setDataModel(model: LMFlowDataModel){
         dataModel = model
         
-        print("cell:\(model)")
+        
+    }
+    
+    func setupSubView() {
+        
     }
 }
 

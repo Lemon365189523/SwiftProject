@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LMFlowCollectionView: UICollectionView {
     
@@ -20,6 +21,11 @@ class LMFlowCollectionView: UICollectionView {
         self.delegate = self
         self.dataSource = self
         self.register(LMFlowCollectionViewCell.self, forCellWithReuseIdentifier: "LMFlowCollectionViewCell")
+        addNotification()
+    }
+    
+    deinit {
+        removeNotification()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,21 +33,17 @@ class LMFlowCollectionView: UICollectionView {
     }
     
     func setCollectionViewData(viewData:[LMFlowDataModel?])  {
-        
+    
         flowDataArray = viewData
         for item in flowDataArray! {
             guard let className = item?.className else {
                 continue
             }
-            let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            let clsName = namespace + "." + className
             
-            self.register(NSClassFromString(clsName).self, forCellWithReuseIdentifier: className)
-//            self.register(LMDefaultImageViewCell.self, forCellWithReuseIdentifier: className)
+            self.register(NSClassFromString(className.getClassName()).self, forCellWithReuseIdentifier: className)
         }
         self.reloadData()
-    
-        print("\(viewData)")
+        
     }
 }
 
@@ -61,15 +63,12 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
         guard let model = flowDataArray?[indexPath.row] else {
             return LMFlowCollectionViewCell()
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.className!, for: indexPath)
-        guard let cellData = model.cellData else {
-            return cell
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.className!, for: indexPath) as! LMFlowCollectionViewCell
         if let bgColor = model.backgroundColor {
             cell.backgroundColor =  UIColor.colorWithHexString(hex: bgColor)
         }
         
-        //cell.setDataModel(model: cellData)
+        cell.setDataModel(model: model)
         
         return cell
     }
@@ -102,4 +101,34 @@ extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+}
+
+
+extension LMFlowCollectionView {
+    
+    func addNotification(){
+        NotificationCenter.default.addObserver(forName: kReloadRowNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            guard let userInfo = notification.userInfo ,
+                let flowDataArray = self.flowDataArray else{
+                return
+            }
+            
+            let json = JSON.init(userInfo)
+            
+            var model = flowDataArray[json["row"].intValue]
+            
+            model?.cellHeight = json["height"].double
+            
+            self.flowDataArray?[json["row"].intValue] = model
+            
+            //self.reloadItems(at: [NSIndexPath.init(row: json["row"].intValue, section: 0) as IndexPath])
+            self.reloadData()
+        }
+    }
+    
+    func removeNotification(){
+        NotificationCenter.default.removeObserver(self, name: kReloadRowNotification, object: nil)
+    }
+    
+    
 }

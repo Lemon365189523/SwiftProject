@@ -8,11 +8,36 @@
 
 import Foundation
 
+let kReloadRowNotification = NSNotification.Name(rawValue: "kReloadRowNotification")
 
 protocol LMFlowCellProtocol {
-    
-    
-    func setupFlowCell()
+
     
     
 }
+
+
+extension LMFlowCellProtocol where Self: LMFlowCollectionViewCell {
+    
+    func clickCell(actionString: String) {
+        
+        print(actionString)
+        
+    }
+    
+    func reloadRowWithHeight(row: Int, height: Double){
+        NotificationCenter.default.post(name: kReloadRowNotification, object: nil, userInfo: ["row" : row , "height" : height])
+        
+    }
+    
+    func reloadRowWithWidth() {
+        
+    }
+    
+    func reloadRowWithSize(){
+        
+        
+    }
+}
+
+

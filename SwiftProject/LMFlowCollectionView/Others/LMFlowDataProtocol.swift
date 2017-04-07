@@ -23,8 +23,10 @@ extension LMFlowDataProtocol{
     func parseFlowData(json: JSON?) -> [LMFlowDataModel?]{
         let array = json?["data"]
         var modelArr = [LMFlowDataModel?]()
-        for (_, item) in array! {
-            modelArr.append(LMFlowDataModel.init(json: item))
+        for (index, item) in array! {
+            var model = LMFlowDataModel.init(json: item)
+            model?.index = Int(index)!
+            modelArr.append(model)
         }
         return modelArr
     }

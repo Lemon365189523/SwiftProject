@@ -26,21 +26,26 @@ class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataProtoco
             make.edges.equalTo(0)
         }
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "刷新", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))
+        
+        getHomeLayout()
+        
+        
+    }
+
+    func getHomeLayout(){
         //请求配置文件
         getHomeLayout {[weak self] (json, error) in
             if error == nil {
-               //LMFlowDataServer协议解析数据然后返回给collectionView
-                //配置文件只加载一次 
+                //LMFlowDataServer协议解析数据然后返回给collectionView
+                //配置文件只加载一次
                 let modelArr = self?.parseFlowData(json: json)
                 self?.conllectionView.setCollectionViewData(viewData: modelArr as! [LMFlowDataModel])
             }else{
                 
             }
         }
-
         
     }
-
-
 
 }

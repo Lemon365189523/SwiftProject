@@ -15,7 +15,7 @@ import SwiftyJSON
 
 struct LMFlowDataModel {
     var className : String?
-//    var indexPath : NSIndexPath
+    var index : Int = 0
     var cellWidth : Double? = 0
     var cellHeight : Double? = 0
     var cellData : Dictionary<String, JSON>?
