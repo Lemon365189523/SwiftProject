@@ -21,6 +21,7 @@ struct LMFlowDataModel {
     var cellData : Dictionary<String, JSON>?
     var cellId : String? = "" 
     var backgroundColor : String? = "ffffff"
+    var needSetData : Bool = true
     
     init?(json:JSON?) {
         guard let json = json else {

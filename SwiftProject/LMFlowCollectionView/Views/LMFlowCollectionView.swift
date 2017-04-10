@@ -13,10 +13,11 @@ class LMFlowCollectionView: UICollectionView {
     
     var flowDataArray : [LMFlowDataModel?]?
     
+    let layout = UICollectionViewFlowLayout()
     
     init(frame: CGRect){
         //一定要用UICollectionViewLayout的子类 UICollectionViewFlowLayout 或自己继承UICollectionViewLayout重写方法
-        let layout = UICollectionViewFlowLayout()
+//        let layout = UICollectionViewFlowLayout()
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
@@ -33,7 +34,10 @@ class LMFlowCollectionView: UICollectionView {
     }
     
     func setCollectionViewData(viewData:[LMFlowDataModel?])  {
-    
+        if (flowDataArray != nil) {
+            flowDataArray?.removeAll()
+            flowDataArray = nil
+        }
         flowDataArray = viewData
         for item in flowDataArray! {
             guard let className = item?.className else {
@@ -42,6 +46,7 @@ class LMFlowCollectionView: UICollectionView {
             
             self.register(NSClassFromString(className.getClassName()).self, forCellWithReuseIdentifier: className)
         }
+
         self.reloadData()
         
     }
@@ -69,7 +74,7 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
         }
         
         cell.setDataModel(model: model)
-        
+
         return cell
     }
     
@@ -117,11 +122,20 @@ extension LMFlowCollectionView {
             
             var model = flowDataArray[json["row"].intValue]
             
+            if model?.needSetData == false {
+                return
+            }
+            
             model?.cellHeight = json["height"].double
             
-            self.flowDataArray?[json["row"].intValue] = model
+            model?.needSetData = false
             
-            //self.reloadItems(at: [NSIndexPath.init(row: json["row"].intValue, section: 0) as IndexPath])
+            self.flowDataArray?[json["row"].intValue] = model
+//            UIView.performWithoutAnimation({ 
+
+//            self.reloadItems(at: [NSIndexPath.init(row: json["row"].intValue, section: 0) as IndexPath])
+
+//            })
             self.reloadData()
         }
     }
