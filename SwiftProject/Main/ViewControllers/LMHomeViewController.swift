@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataProtocol {
+class LMHomeViewController: UIViewController, LMHomeViewModel {
     lazy var conllectionView: LMFlowCollectionView = {
         let view = LMFlowCollectionView.init(frame: CGRect.zero)
         view.backgroundColor = UIColor.groupTableViewBackground
         return view
     }()
     
- 
+    let flowServer = LMFlowDataServer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataProtoco
         
         getHomeLayout()
         
-        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "更新cell数据", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))
     }
 
     func getHomeLayout(){
@@ -39,13 +39,24 @@ class LMHomeViewController: UIViewController, LMHomeViewModel, LMFlowDataProtoco
             if error == nil {
                 //LMFlowDataServer协议解析数据然后返回给collectionView
                 //配置文件只加载一次
-                let modelArr = self?.parseFlowData(json: json)
-                self?.conllectionView.setCollectionViewData(viewData: modelArr as! [LMFlowDataModel])
+                
+                self?.flowServer.parseFlowData(json: json)
+                self?.conllectionView.setCollectionflowServer(flowServer: (self?.flowServer)!)
             }else{
                 
             }
         }
-        
+    }
+    
+    func getCellData(){
+        getImageCellData { (json, error) in
+            if error == nil{
+                guard let data = json?["data"].dictionary else{return}
+                guard let cellId = data["cellId"]?.string,
+                    let cellData = data["cellData"]?.dictionary else{return }
+                self.conllectionView.updateCellData(cellId: cellId, cellData: cellData)
+            }
+        }
     }
 
 }

@@ -10,17 +10,56 @@ import Foundation
 import SwiftyJSON
 
 protocol LMFlowDataProtocol {
+    //控制只读
+    //var dataArray : [LMFlowDataModel?] {get}
+    func updateDataArray(modelArray: [LMFlowDataModel?]) -> [LMFlowDataModel?]
     
+    func insertCellData(cellData:Dictionary<String, JSON>,cellId:String)
+    
+    func updateModel(index:Int,model: LMFlowDataModel?)
 }
 
-struct  LMFlowDataServer : LMFlowDataProtocol{
+class LMFlowDataServer : LMFlowDataProtocol{
+    //限制外部设置
+    private(set) var dataArray: [LMFlowDataModel?] = []
+    
+    func updateDataArray(modelArray: [LMFlowDataModel?]) -> [LMFlowDataModel?] {
+        dataArray = modelArray
+        //在这里做缓存操作
+        return dataArray
+    }
+    
+    func insertCellData(cellData: Dictionary<String, JSON>, cellId: String) {
+        for model in self.dataArray {
+            guard let cellIdWithModel = model?.cellId else {continue}
+            if cellIdWithModel == cellId {
+                
+            }
+        }
+    }
+    
+    func updateModel(index: Int, model: LMFlowDataModel?) {
+        self.dataArray[index] = model
+    }
+    
+    func getIndex(cellId:String) -> Int? {
+        for item in self.dataArray {
+            guard let cellIdWithModel = item?.cellId else {
+                continue
+            }
+            if cellIdWithModel == cellId {
+                return item?.index
+            }
+        }
+        return nil
+    }
     
     
 }
 
 extension LMFlowDataProtocol{
     
-    func parseFlowData(json: JSON?) -> [LMFlowDataModel?]{
+    func parseFlowData(json: JSON?) {
         let array = json?["data"]
         var modelArr = [LMFlowDataModel?]()
         for (index, item) in array! {
@@ -28,7 +67,8 @@ extension LMFlowDataProtocol{
             model?.index = Int(index)!
             modelArr.append(model)
         }
-        return modelArr
+        
+        _ = self.updateDataArray(modelArray: modelArr)
     }
     
 }

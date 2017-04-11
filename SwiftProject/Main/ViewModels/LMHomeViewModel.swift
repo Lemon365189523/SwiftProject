@@ -26,6 +26,15 @@ extension LMHomeViewModel {
             handler(nil, error)
         }
     }
+    
+    func getImageCellData(hander: @escaping(JSON?, NSError?)-> Void) {
+        let url = "http://www/lemon.com/getImageCellData"
+        LMHttpRequset.POST(url: url, parameters: nil, successBlock: { (data) in
+            hander(data, nil)
+        }) { (error) in
+            hander(nil, error)
+        }
+    }
 }
 
 

@@ -1,8 +1,9 @@
+
 //
-//  LMDefaultImageViewCell.swift
+//  LMStretchImageViewCell.swift
 //  SwiftProject
 //
-//  Created by KADFWJ on 2017/4/6.
+//  Created by KADFWJ on 2017/4/11.
 //  Copyright © 2017年 lemon. All rights reserved.
 //
 
@@ -10,9 +11,10 @@ import Foundation
 import SwiftyJSON
 import Kingfisher
 
-class LMDefaultImageViewCell: LMFlowCollectionViewCell {
+class LMStretchImageViewCell: LMFlowCollectionViewCell {
+    
     lazy var imageView: UIImageView = {
-        let iv = UIImageView.init()
+        let iv = UIImageView()
         return iv
     }()
     
@@ -22,8 +24,9 @@ class LMDefaultImageViewCell: LMFlowCollectionViewCell {
             imageView.image = UIImage.init()
             return
         }
-        
-        imageView.kf.setImage(with: ImageResource.init(downloadURL: URL.init(string: imageName)!))
+        imageView.kf.setImage(with: ImageResource.init(downloadURL: URL.init(string: imageName)!),  progressBlock: nil) { (image, error, CacheType, nil) in
+            print(self.frame)
+        }
         
     }
     
