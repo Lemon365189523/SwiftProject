@@ -19,14 +19,14 @@ class LMTextCell: LMFlowCollectionViewCell {
         return lb
     }()
     
-    override func setDataModel(model: LMFlowDataModel) {
-        super.setDataModel(model: model)
+    override func setDataModel(model: LMFlowDataModel, flowServer: LMFlowDataServer) {
+        super.setDataModel(model: model, flowServer: flowServer)
         guard let text = model.cellData?["text"]?.string else {
             return
         }
         textLB.text = text
         let height = text.getStringHeigh( font: textLB.font, width:CGFloat(model.cellWidth!))
-        reloadRowWithHeight(row: model.index, height: Double(height ))
+        reloadRowWithHeight(row: model.index, height: height )
     }
     
     

@@ -34,8 +34,8 @@ class LMFlowCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //设置数据，每个flowView有一个FlowServer做数据处理
     func setCollectionflowServer(flowServer:LMFlowDataServer)  {
-       
         self.flowServer = flowServer
         for  item in (self.flowServer?.dataArray)! {
             guard let className = item?.className else {
@@ -98,9 +98,16 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
             cell.backgroundColor =  UIColor.colorWithHexString(hex: bgColor)
         }
         
-        cell.setDataModel(model: model)
+        cell.setDataModel(model: model,flowServer: flowServer!)
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let model = self.flowServer?.dataArray[indexPath.row] ,
+            let targetAction = model.clickAction  else {return}
+        print(targetAction)
+        
     }
     
 }

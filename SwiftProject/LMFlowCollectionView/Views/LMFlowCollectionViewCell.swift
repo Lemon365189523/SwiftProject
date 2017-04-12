@@ -25,9 +25,12 @@ class LMFlowCollectionViewCell: UICollectionViewCell, LMFlowCellProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDataModel(model: LMFlowDataModel){
+    func setDataModel(model: LMFlowDataModel, flowServer: LMFlowDataServer){
         dataModel = model
-        
+        let hidden = model.cellWidth! <= 0 || model.cellHeight! <= 0
+        for view in self.subviews {
+            view.isHidden = hidden
+        }
         
     }
     

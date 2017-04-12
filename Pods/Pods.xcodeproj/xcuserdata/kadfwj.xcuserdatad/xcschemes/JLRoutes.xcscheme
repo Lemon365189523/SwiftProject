@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1C17481814E11DFDE65692D00F8FCA93'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = '4CC515BBE3A9B7F3A329AAF5B2A78641'
+               BlueprintName = 'JLRoutes'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'JLRoutes.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

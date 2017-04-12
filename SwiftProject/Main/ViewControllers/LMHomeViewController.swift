@@ -8,55 +8,27 @@
 
 import UIKit
 
-class LMHomeViewController: UIViewController, LMHomeViewModel {
-    lazy var conllectionView: LMFlowCollectionView = {
-        let view = LMFlowCollectionView.init(frame: CGRect.zero)
-        view.backgroundColor = UIColor.groupTableViewBackground
-        return view
-    }()
+class LMHomeViewController: UIViewController {
+
     
-    let flowServer = LMFlowDataServer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        view.addSubview(conllectionView)
-        conllectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(0)
+        let btn = UIButton.init(type: .custom)
+        btn.setTitle("跳转", for: .normal)
+        btn.setTitleColor(UIColor.blue, for: .normal)
+        self.view.addSubview(btn)
+        btn.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view.snp.center)
         }
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "刷新", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))
-        
-        getHomeLayout()
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "更新cell数据", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))
-    }
-
-    func getHomeLayout(){
-        //请求配置文件
-        getHomeLayout {[weak self] (json, error) in
-            if error == nil {
-                //LMFlowDataServer协议解析数据然后返回给collectionView
-                //配置文件只加载一次
-                
-                self?.flowServer.parseFlowData(json: json)
-                self?.conllectionView.setCollectionflowServer(flowServer: (self?.flowServer)!)
-            }else{
-                
-            }
-        }
+        btn.addTarget(self, action: #selector(pushVC), for: .touchUpInside)
     }
     
-    func getCellData(){
-        getImageCellData { (json, error) in
-            if error == nil{
-                guard let data = json?["data"].dictionary else{return}
-                guard let cellId = data["cellId"]?.string,
-                    let cellData = data["cellData"]?.dictionary else{return }
-                self.conllectionView.updateCellData(cellId: cellId, cellData: cellData)
-            }
-        }
+    func pushVC(){
+        let vc = LMFlowViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+
 
 }

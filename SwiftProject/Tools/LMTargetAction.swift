@@ -1,52 +1,46 @@
+
+
 //
 //  LMTargetAction.swift
 //  SwiftProject
 //
-//  Created by Macx on 2017/4/2.
+//  Created by KADFWJ on 2017/4/12.
 //  Copyright © 2017年 lemon. All rights reserved.
 //
 
 import Foundation
+import SwiftyJSON
 
-
-protocol TargetAction {
-    func perfromAction()
-}
-
-
-struct TargetActionWrapper<T: AnyObject> : TargetAction {
+class LMTargetAction {
+    //单例模式
+    static let sharedInstance = LMTargetAction()
     
-    weak var target : T?
+    private init (){
+        
+    }
     
-    let action: (T) -> () -> ()
-
-    func perfromAction() {
-        if let t = target {
-            action(t)()
+    var target : AnyObject?
+    
+    var action : String?
+    
+    func setTargetAction(targetAction: Dictionary<String, JSON>){
+        //根据target来判断需要做什么
+        guard let targetString = targetAction["target"]?.string else {
+            print("无效的target>>>>target:\(targetAction["target"])")
+            return
+        }
+        if targetString == ""{
+            
+        }else if targetString == "" {
+            
+        }else{
+            print("无效的target>>>>target:\(targetAction["target"])")
+            return
         }
     }
-
+    
+    
     
 }
 
-enum ControlEvent{
-    case TouchUpInside
-    case ValueChange
-}
-
-class Control {
-    var actions = [ControlEvent: TargetAction]()
-    
-    func setTarget<T : AnyObject>(target: T, action:@escaping (T) -> () -> (),event: ControlEvent){
-        actions[event] = TargetActionWrapper(target: target, action: action)
-    }
-    
-    func removeTargetActionEvent(controlEvent:ControlEvent){
-        actions[controlEvent] = nil
-    }
-    
-    func perfromActionFromControlEvent(controlEvent: ControlEvent){
-        actions[controlEvent]?.perfromAction()
-    }
-}
 

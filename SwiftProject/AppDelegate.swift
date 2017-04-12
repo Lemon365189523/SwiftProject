@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         
 
-        let loginVC = LMLoginVC()
-        
-        self.window?.rootViewController = loginVC
+        //let loginVC = LMLoginVC()
+        let main = LMTabBarController()
+        self.window?.rootViewController = main
         self.window?.makeKeyAndVisible()
         
         return true

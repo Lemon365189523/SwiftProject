@@ -30,10 +30,12 @@ class LMFlowDataServer : LMFlowDataProtocol{
     }
     
     func insertCellData(cellData: Dictionary<String, JSON>, cellId: String) {
-        for model in self.dataArray {
+        for (index,model) in self.dataArray.enumerated() {
             guard let cellIdWithModel = model?.cellId else {continue}
-            if cellIdWithModel == cellId {
-                
+            if cellIdWithModel == cellId && !cellIdWithModel.isEmpty {
+                var updateModel = model
+                updateModel?.cellData = cellData
+                self.dataArray[index] = updateModel
             }
         }
     }
@@ -47,7 +49,7 @@ class LMFlowDataServer : LMFlowDataProtocol{
             guard let cellIdWithModel = item?.cellId else {
                 continue
             }
-            if cellIdWithModel == cellId {
+            if cellIdWithModel == cellId && !cellIdWithModel.isEmpty {
                 return item?.index
             }
         }

@@ -25,7 +25,7 @@ extension LMFlowCellProtocol where Self: LMFlowCollectionViewCell {
         
     }
     
-    func reloadRowWithHeight(row: Int, height: Double){
+    func reloadRowWithHeight(row: Int, height: CGFloat){
         NotificationCenter.default.post(name: kReloadRowNotification, object: nil, userInfo: ["row" : row , "height" : height])
         
     }
@@ -37,6 +37,14 @@ extension LMFlowCellProtocol where Self: LMFlowCollectionViewCell {
     func reloadRowWithSize(){
         
         
+    }
+    
+    //传入一个size 按比例刷新高度
+    func reloadRowHeightWithSizeRatio(row: Int, size:CGSize, width: CGFloat){
+        let ration = width / size.width
+        let height = ration * size.height
+        
+        NotificationCenter.default.post(name: kReloadRowNotification, object: nil, userInfo: ["row" : row , "height" : height])
     }
 }
 

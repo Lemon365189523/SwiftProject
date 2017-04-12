@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C38DE396CBC1B0B6D5FAD89 /* Pods_SwiftProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669179AF2376AFA1126C9729 /* Pods_SwiftProjectUITests.framework */; };
-		8F127AC61E90D51700FDEF86 /* LMTargetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F127AC51E90D51700FDEF86 /* LMTargetAction.swift */; };
+		8F127AC61E90D51700FDEF86 /* LMCurrying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F127AC51E90D51700FDEF86 /* LMCurrying.swift */; };
 		8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F5F431E7180EE009771D5 /* AppDelegate.swift */; };
 		8F1F5F4B1E7180EE009771D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F5F4A1E7180EE009771D5 /* Assets.xcassets */; };
 		8F1F5F4E1E7180EE009771D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F5F4C1E7180EE009771D5 /* LaunchScreen.storyboard */; };
@@ -22,8 +22,10 @@
 		F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5D1E837F1800746158 /* LMLoginModel.swift */; };
 		F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */; };
 		F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AEA611E837FB000746158 /* LMLoginView.swift */; };
+		F72C1F1E1E9E1F62007287C6 /* LMFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C1F1D1E9E1F62007287C6 /* LMFlowViewController.swift */; };
 		F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */; };
 		F7612F3D1E83B48700E50C00 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7612F3C1E83B48700E50C00 /* Header.swift */; };
+		F7621D071E9E15FE00868989 /* LMTargetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7621D061E9E15FE00868989 /* LMTargetAction.swift */; };
 		F7A7B1321E97170F00AB83E5 /* LMStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */; };
 		F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A7B1331E97302900AB83E5 /* LMTextCell.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
@@ -63,7 +65,7 @@
 		07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20656D8F15E36A291E97FAB7 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		669179AF2376AFA1126C9729 /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F127AC51E90D51700FDEF86 /* LMTargetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTargetAction.swift; sourceTree = "<group>"; };
+		8F127AC51E90D51700FDEF86 /* LMCurrying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMCurrying.swift; sourceTree = "<group>"; };
 		8F1F5F401E7180EE009771D5 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1F5F431E7180EE009771D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F1F5F4A1E7180EE009771D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,9 +88,11 @@
 		F71AEA5D1E837F1800746158 /* LMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginModel.swift; sourceTree = "<group>"; };
 		F71AEA5F1E837F2700746158 /* LMLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginViewModel.swift; sourceTree = "<group>"; };
 		F71AEA611E837FB000746158 /* LMLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMLoginView.swift; sourceTree = "<group>"; };
+		F72C1F1D1E9E1F62007287C6 /* LMFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowViewController.swift; sourceTree = "<group>"; };
 		F733CE461E84B8960075553B /* LMKeyboardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMKeyboardProtocol.swift; sourceTree = "<group>"; };
 		F746AB041E8A629500355F88 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F7621D061E9E15FE00868989 /* LMTargetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTargetAction.swift; sourceTree = "<group>"; };
 		F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStringExtension.swift; sourceTree = "<group>"; };
 		F7A7B1331E97302900AB83E5 /* LMTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTextCell.swift; sourceTree = "<group>"; };
 		F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStretchImageViewCell.swift; sourceTree = "<group>"; };
@@ -251,9 +255,10 @@
 		8F1F5F761E71820B009771D5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				8F127AC51E90D51700FDEF86 /* LMTargetAction.swift */,
+				8F127AC51E90D51700FDEF86 /* LMCurrying.swift */,
 				F7003AD71E960C5300768B0E /* LMColorExtension.swift */,
 				F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */,
+				F7621D061E9E15FE00868989 /* LMTargetAction.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				F7F2062B1E8E36F100F374ED /* LMHomeViewController.swift */,
+				F72C1F1D1E9E1F62007287C6 /* LMFlowViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -390,8 +396,8 @@
 				F7F206441E8F4FBC00F374ED /* LMFlowCollectionView.swift */,
 				F7F206451E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift */,
 				F7003AD51E95D69D00768B0E /* LMDefaultImageViewCell.swift */,
-				F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */,
 				F7A7B1331E97302900AB83E5 /* LMTextCell.swift */,
+				F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -679,11 +685,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
+				F72C1F1E1E9E1F62007287C6 /* LMFlowViewController.swift in Sources */,
 				F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */,
 				F7F2062E1E8E3D4D00F374ED /* LMTabBar.swift in Sources */,
 				F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */,
 				F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
+				F7621D071E9E15FE00868989 /* LMTargetAction.swift in Sources */,
 				F7003AD81E960C5300768B0E /* LMColorExtension.swift in Sources */,
 				F7F2064F1E8F576800F374ED /* LMFlowCellProtocol.swift in Sources */,
 				F7F206471E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift in Sources */,
@@ -702,7 +710,7 @@
 				F7F2064B1E8F505E00F374ED /* LMFlowDataProtocol.swift in Sources */,
 				8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */,
 				F7003AD61E95D69D00768B0E /* LMDefaultImageViewCell.swift in Sources */,
-				8F127AC61E90D51700FDEF86 /* LMTargetAction.swift in Sources */,
+				8F127AC61E90D51700FDEF86 /* LMCurrying.swift in Sources */,
 				F71AEA601E837F2700746158 /* LMLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

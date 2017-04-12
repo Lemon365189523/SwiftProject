@@ -16,8 +16,8 @@ class LMDefaultImageViewCell: LMFlowCollectionViewCell {
         return iv
     }()
     
-    override func setDataModel(model: LMFlowDataModel) {
-        super.setDataModel(model: model)
+    override func setDataModel(model: LMFlowDataModel, flowServer: LMFlowDataServer) {
+        super.setDataModel(model: model, flowServer: flowServer)
         guard let imageName = model.cellData?["imageName"]?.string  else {
             imageView.image = UIImage.init()
             return
