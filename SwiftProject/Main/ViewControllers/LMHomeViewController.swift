@@ -23,11 +23,15 @@ class LMHomeViewController: UIViewController {
             make.center.equalTo(self.view.snp.center)
         }
         btn.addTarget(self, action: #selector(pushVC), for: .touchUpInside)
+        
+
     }
     
     func pushVC(){
         let vc = LMFlowViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+
+        
     }
 
 

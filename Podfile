@@ -11,7 +11,6 @@ target 'SwiftProject' do
   pod 'MBProgressHUD'
   pod 'Kingfisher'
   pod 'HandyJSON'
-  pod 'JLRoutes' 
   # Pods for SwiftProject
 
   target 'SwiftProjectTests' do

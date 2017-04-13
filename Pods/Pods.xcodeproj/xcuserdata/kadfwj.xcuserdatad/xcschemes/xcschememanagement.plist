@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JLRoutes.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1C17481814E11DFDE65692D00F8FCA93</key>
+		<key>0326F606167424302578C49D656EE8EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28798F3EBDD77EBF2F608A3C2652098E</key>
+		<key>33D6FDEF4D11EA4E24A9662C270DF8E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3F49B5B109EF96D7268B74AA21B16422</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,22 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CC515BBE3A9B7F3A329AAF5B2A78641</key>
+		<key>5CF02B82D4187E4BE8A925BC804EC401</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6681DC04369A3DDA60E3971FA351A175</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70AB6A0480C32AFAD906C55DAC7BF8D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A77E4039D8D7E6955B639FD1380DA2E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B18564E636A263AB4C139E1623CBF61C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -123,16 +123,6 @@
 			<true/>
 		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DEA37F13E5C0EC91035FDC5D59BFDD03</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1D478CE15D838B23855E039B16469A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

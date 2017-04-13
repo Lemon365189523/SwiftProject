@@ -35,5 +35,14 @@ extension String {
         
     }
     
+    //判断字符是否为空
+    func whitespacesIsEmple() -> Bool{
+        let string = self.trimmingCharacters(in: CharacterSet.whitespaces)
+        return string.isEmpty
+    }
+    
+    
+    
+    
 }
 

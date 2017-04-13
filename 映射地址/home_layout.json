@@ -23,10 +23,7 @@
 			"cellHeight": "30%",
 			"cellWidth" : "30%",
 			"backgroundColor" : "980303",
-			"clickAction":{
-				"target" : "",
-				"action" : ""
-			},
+			"action": "LM://type=push&class=LMFlowViewController&backgroundColor=090203",
 			"cellData" :{
 				"imageName":"http://ons1ui5s6.bkt.clouddn.com/image/lemonicon.png"
 			}

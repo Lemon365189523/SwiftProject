@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,10 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = main
         self.window?.makeKeyAndVisible()
         
+        
         return true
     }
     
-
+    //iOS9 之后 要在info里注册了Scheme 才能用openurl
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("url:\(url)")
+        
+        return true
+    }
+    
+    //iOS9 之前
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("url:\(url)")
+        
+        return true
+    }
+    
     
 
     func applicationWillResignActive(_ application: UIApplication) {

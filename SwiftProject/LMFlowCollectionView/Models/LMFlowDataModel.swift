@@ -22,8 +22,7 @@ struct LMFlowDataModel {
     var cellId : String? = "" 
     var backgroundColor : String? = "ffffff"
     var needSetData : Bool = true
-    var clickAction : Dictionary<String, JSON>?
-    
+    var action : String? = ""
     
     init?(json:JSON?) {
         guard let json = json else {
@@ -67,8 +66,8 @@ struct LMFlowDataModel {
             self.cellId = className! + String(index)
         }
         
-        if let action = json["clickAction"].dictionary{
-            clickAction = action
+        if let action = json["action"].string {
+            self.action = action
         }
         
     }

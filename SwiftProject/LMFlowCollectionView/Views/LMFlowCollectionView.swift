@@ -104,10 +104,11 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let model = self.flowServer?.dataArray[indexPath.row] ,
-            let targetAction = model.clickAction  else {return}
-        print(targetAction)
-        
+        guard let model = self.flowServer?.dataArray[indexPath.row],
+         let action = model.action else{
+            return
+        }
+        LMRoutes.shared.routesWithUrl(url: URL(string: action))
     }
     
 }
