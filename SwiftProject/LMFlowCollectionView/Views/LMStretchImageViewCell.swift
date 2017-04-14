@@ -35,7 +35,7 @@ class LMStretchImageViewCell: LMFlowCollectionViewCell {
         }
         imageView.kf.setImage(with: ImageResource.init(downloadURL: URL.init(string: imageName)!),  progressBlock: nil) {
             [weak self] (image, error, CacheType, nil) in
-            self?.reloadRowHeightWithSizeRatio(row: model.index, size: (image?.size)!, width: (self?.frame.width)!)
+            self?.flowView?.reloadRowHeightWithSizeRatio(row: model.index, size: (image?.size)!, width: (self?.frame.width)!)
         }
         
 

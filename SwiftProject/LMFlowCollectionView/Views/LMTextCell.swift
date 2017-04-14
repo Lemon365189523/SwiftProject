@@ -26,7 +26,7 @@ class LMTextCell: LMFlowCollectionViewCell {
         }
         textLB.text = text
         let height = text.getStringHeigh( font: textLB.font, width:CGFloat(model.cellWidth!))
-        reloadRowWithHeight(row: model.index, height: height )
+        self.flowView?.reloadRowWithHeight(row: model.index, height: height )
     }
     
     

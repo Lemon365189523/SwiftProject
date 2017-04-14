@@ -13,6 +13,8 @@ class LMFlowCollectionViewCell: UICollectionViewCell, LMFlowCellProtocol {
     
     var dataModel : LMFlowDataModel?
     
+    weak var flowView : LMFlowCollectionView?
+    
     //var delegate : LMFlowDataProtocol?
     
     override init(frame: CGRect) {

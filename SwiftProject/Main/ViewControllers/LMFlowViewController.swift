@@ -29,6 +29,8 @@ class LMFlowViewController: UIViewController , LMHomeViewModel{
         getHomeLayout()
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "更新cell数据", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getCellData)),UIBarButtonItem.init(title: "刷新", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))]
+        
+
     }
     
     deinit {
@@ -44,6 +46,7 @@ class LMFlowViewController: UIViewController , LMHomeViewModel{
                 
                 self?.flowServer.parseFlowData(json: json)
                 self?.conllectionView.setCollectionflowServer(flowServer: (self?.flowServer)!)
+                self?.getCellData()
             }else{
                 
             }

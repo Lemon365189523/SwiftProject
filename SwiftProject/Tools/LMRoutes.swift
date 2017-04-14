@@ -14,7 +14,7 @@ enum LMRoutesType : String{
     case PresentVC = "PresentVC"
 }
 
-class LMRoutes{
+class LMRoutes: LMRoutesAction{
     
     static let shared = LMRoutes()
     
@@ -38,19 +38,40 @@ class LMRoutes{
         
         let type = LMRoutesType(rawValue:json["type"].string!)
         
+        let vc = initController(json: json)
+        
         if let routesType = type {
             switch routesType {
             case .PresentVC:
-                print("PresentVC")
+                guard let presentVC = vc else {
+                    print(">>>>>>present无效的VC")
+                    return
+                }
+                
+                currentTopController().present(presentVC, animated: true, completion: nil)
                 
             case .PustVC:
+                guard let pushVC = vc else {
+                    print(">>>>>>Push无效的VC")
+                    return
+                }
+                if let hideTabBarString =  json["hideTabBar"].string ,let hideTabBar = Bool(hideTabBarString) {
+                    vc?.hidesBottomBarWhenPushed = hideTabBar
+                }
                 
-                print("PushVC")
+                currentTopController().navigationController?.pushViewController(pushVC, animated: true)
+                
+                
+                
+                
+                
+                
             }
         }else{
-            print(">>>>>>传入无用的type:\(json["type"].string)")
+            print(">>>>>>传入无效的type:\(json["type"].string)")
         }
-
+        
+        
     }
     
 }

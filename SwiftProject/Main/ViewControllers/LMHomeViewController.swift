@@ -24,8 +24,10 @@ class LMHomeViewController: UIViewController {
         }
         btn.addTarget(self, action: #selector(pushVC), for: .touchUpInside)
         
-
+        
     }
+    
+    
     
     func pushVC(){
         let vc = LMFlowViewController()
@@ -36,3 +38,4 @@ class LMHomeViewController: UIViewController {
 
 
 }
+

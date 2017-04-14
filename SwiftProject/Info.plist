@@ -49,9 +49,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>JLRoutesOne</string>
-				<string>JLRoutesTwo</string>
-				<string>JLRoutesThree</string>
+				<string>LMRoutes</string>
 			</array>
 			<key>CFBundleURLName</key>
 			<string>com.lemon.www</string>

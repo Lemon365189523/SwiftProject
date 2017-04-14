@@ -22,13 +22,9 @@ class LMFlowCollectionView: UICollectionView {
         self.delegate = self
         self.dataSource = self
         self.register(LMFlowCollectionViewCell.self, forCellWithReuseIdentifier: "LMFlowCollectionViewCell")
-        addNotification()
     }
     
 
-    deinit {
-        removeNotification()
-    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -94,6 +90,7 @@ extension LMFlowCollectionView : UICollectionViewDataSource, UICollectionViewDel
             return LMFlowCollectionViewCell()
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.className!, for: indexPath) as! LMFlowCollectionViewCell
+        cell.flowView = self
         if let bgColor = model.backgroundColor {
             cell.backgroundColor =  UIColor.colorWithHexString(hex: bgColor)
         }
@@ -144,40 +141,41 @@ extension LMFlowCollectionView : UICollectionViewDelegateFlowLayout {
 
 extension LMFlowCollectionView {
     
-    func addNotification(){
-        NotificationCenter.default.addObserver(forName: kReloadRowNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            guard let userInfo = notification.userInfo ,
-                let flowDataArray = self.flowServer?.dataArray else{
+    func reloadRowWithHeight(row: Int, height: CGFloat){
+        
+        guard let flowDataArray = self.flowServer?.dataArray else{
                 return
-            }
-            
-            let json = JSON.init(userInfo)
-            
-            var model = flowDataArray[json["row"].intValue]
-            
-            if model?.needSetData == false {
-                return
-            }
-            
-            model?.cellHeight = json["height"].double
-            
-            model?.needSetData = false
-                        
-            self.flowServer?.updateModel(index: json["row"].intValue, model: model)
-            
-            DispatchQueue.main.async(execute: {
-                //self.reloadData()
-                UIView.performWithoutAnimation({
-                    self.reloadItems(at: [NSIndexPath.init(row: json["row"].intValue, section: 0) as IndexPath])
-                })
-            })
-            
         }
+        
+        var model = flowDataArray[row]
+        
+        if model?.needSetData == false {
+            return
+        }
+        
+        model?.cellHeight = Double(height)
+        
+        model?.needSetData = false
+        
+        self.flowServer?.updateModel(index: row, model: model)
+        
+        DispatchQueue.main.async(execute: {
+            //self.reloadData()
+            UIView.performWithoutAnimation({
+                self.reloadItems(at: [NSIndexPath.init(row: row, section: 0) as IndexPath])
+            })
+        })
+        
     }
-    
-    func removeNotification(){
-        NotificationCenter.default.removeObserver(self, name: kReloadRowNotification, object: nil)
+
+    //传入一个size 按比例刷新高度
+    func reloadRowHeightWithSizeRatio(row: Int, size:CGSize, width: CGFloat){
+        let ration = width / size.width
+        let height = ration * size.height
+        
+        reloadRowWithHeight(row: row, height: height)
     }
+
     
     
 }

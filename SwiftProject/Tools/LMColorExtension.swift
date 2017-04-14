@@ -11,7 +11,7 @@ import Foundation
 
 extension UIColor {
     
-    class func colorWithHexStringAndAlpha(hex: String , alpha:CGFloat = 1) -> UIColor {
+    class func colorWithHexStringAndAlpha(hex: String , alpha:CGFloat ) -> UIColor {
         // 去除空格等
         var cString: String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
         // 去除#
