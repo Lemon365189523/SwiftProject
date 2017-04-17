@@ -84,9 +84,23 @@ extension LMRoutesAction{
                     case _ as Optional<Bool>.Type:
                         assert(false, "LMRouter --> 参数不支持Optional<Bool>类型，改成Bool类型")
                         
-                    case _ as Optional<Dictionary<String, String>>.Type:
+                    case _ as Optional<Dictionary<String, String>>.Type, _ as Dictionary<String, String>.Type:
+                        //转的也是转成字符串的字典，在vc拿到字典后再做解析操作
+                        //%7B { 
+                        //%7D }
+                        //%3A =
                         
-                        print(val)
+                        var dicString = val
+                        dicString.remove(at: dicString.index(before: dicString.endIndex))
+                        dicString.remove(at: dicString.startIndex)
+                        let array = dicString.components(separatedBy: ",")
+                        var dic = Dictionary<String, String>.init()
+                        for item in array {
+                            let arr = item.components(separatedBy: ":")
+                            dic[arr[0]] = arr[1]
+                        }
+                        
+                        viewController.setValue(dic, forKey: key)
                     default:
                         break
                     }

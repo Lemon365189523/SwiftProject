@@ -30,6 +30,8 @@ class LMFlowViewController: UIViewController , LMHomeViewModel{
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "更新cell数据", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getCellData)),UIBarButtonItem.init(title: "刷新", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getHomeLayout))]
         
+        
+        
 
     }
     
@@ -47,6 +49,13 @@ class LMFlowViewController: UIViewController , LMHomeViewModel{
                 self?.flowServer.parseFlowData(json: json)
                 self?.conllectionView.setCollectionflowServer(flowServer: (self?.flowServer)!)
                 self?.getCellData()
+                
+                let arr = self?.getProductCellArray()
+                
+                self?.flowServer.insertModels(models: arr!)
+                
+                self?.conllectionView.setCollectionflowServer(flowServer: (self?.flowServer)!)
+                
             }else{
                 
             }
@@ -63,6 +72,20 @@ class LMFlowViewController: UIViewController , LMHomeViewModel{
             }
         }
     }
-
+    
+    func getProductCellArray() -> [LMFlowDataModel]{
+        var modelArray = [LMFlowDataModel]()
+        for index in 0...5 {
+            var model = LMFlowDataModel()
+            model.cellWidth = kSreenWight / 2
+            model.cellHeight = 250
+            model.className = "LMProductListFlowCell"
+            model.index = index
+            model.cellData = ["productId": "1234567"]
+            modelArray.append(model)
+        }
+        
+        return modelArray
+    }
 
 }

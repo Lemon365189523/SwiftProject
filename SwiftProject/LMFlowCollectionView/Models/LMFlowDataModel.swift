@@ -13,6 +13,12 @@ import SwiftyJSON
 
 ///  布局配置文件模型
 
+enum ControlType : Int{
+    case ControlOnlyOneVersion = 1//只控制一个版本
+    case ControlAscending = 2//升序，某个版本以上
+    case ControlDescending = 3//降序，某个版本以下
+}
+
 struct LMFlowDataModel {
     var className : String?
     var index : Int = 0
@@ -23,6 +29,10 @@ struct LMFlowDataModel {
     var backgroundColor : String? = "ffffff"
     var needSetData : Bool = true
     var action : String? = ""
+    ///是否实现版本控制
+    var needRevisionControl : Bool = false
+    var controlVersion : String?
+    var controlType : ControlType?
     
     init?(json:JSON?) {
         guard let json = json else {
@@ -71,6 +81,11 @@ struct LMFlowDataModel {
         }
         
     }
+    
+    init() {
+        
+    }
+    
 }
 
 

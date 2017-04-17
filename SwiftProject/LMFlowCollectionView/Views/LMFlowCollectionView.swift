@@ -50,7 +50,7 @@ class LMFlowCollectionView: UICollectionView {
             
         }
         
-        //调用主线程要用这个方法
+        //调用主线程要用这个有execute方法
         DispatchQueue.main.async(execute: {
             self.reloadData()
 
@@ -160,7 +160,6 @@ extension LMFlowCollectionView {
         self.flowServer?.updateModel(index: row, model: model)
         
         DispatchQueue.main.async(execute: {
-            //self.reloadData()
             UIView.performWithoutAnimation({
                 self.reloadItems(at: [NSIndexPath.init(row: row, section: 0) as IndexPath])
             })

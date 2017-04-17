@@ -30,6 +30,7 @@
 		F7A7B1321E97170F00AB83E5 /* LMStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */; };
 		F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A7B1331E97302900AB83E5 /* LMTextCell.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
+		F7D8F4061EA4A92000E23C2B /* LMProductListFlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */; };
 		F7E706F21E9F7A0B00F99F35 /* LMRoutesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E706F11E9F7A0B00F99F35 /* LMRoutesAction.swift */; };
 		F7E706F41EA062F400F99F35 /* LMPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E706F31EA062F400F99F35 /* LMPresentVC.swift */; };
 		F7E7E5C91E9CC9E9009662FA /* LMStretchImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */; };
@@ -43,8 +44,7 @@
 		F7F206461E8F4FBC00F374ED /* LMFlowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206441E8F4FBC00F374ED /* LMFlowCollectionView.swift */; };
 		F7F206471E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206451E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift */; };
 		F7F206491E8F4FF800F374ED /* LMFlowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F206481E8F4FF800F374ED /* LMFlowDataModel.swift */; };
-		F7F2064B1E8F505E00F374ED /* LMFlowDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F2064A1E8F505E00F374ED /* LMFlowDataProtocol.swift */; };
-		F7F2064F1E8F576800F374ED /* LMFlowCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F2064E1E8F576800F374ED /* LMFlowCellProtocol.swift */; };
+		F7F2064B1E8F505E00F374ED /* LMFlowDataServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F2064A1E8F505E00F374ED /* LMFlowDataServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +99,7 @@
 		F7612F3C1E83B48700E50C00 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStringExtension.swift; sourceTree = "<group>"; };
 		F7A7B1331E97302900AB83E5 /* LMTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTextCell.swift; sourceTree = "<group>"; };
+		F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMProductListFlowCell.swift; sourceTree = "<group>"; };
 		F7E706F11E9F7A0B00F99F35 /* LMRoutesAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMRoutesAction.swift; sourceTree = "<group>"; };
 		F7E706F31EA062F400F99F35 /* LMPresentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMPresentVC.swift; sourceTree = "<group>"; };
 		F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStretchImageViewCell.swift; sourceTree = "<group>"; };
@@ -112,8 +113,7 @@
 		F7F206441E8F4FBC00F374ED /* LMFlowCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowCollectionView.swift; sourceTree = "<group>"; };
 		F7F206451E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7F206481E8F4FF800F374ED /* LMFlowDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowDataModel.swift; sourceTree = "<group>"; };
-		F7F2064A1E8F505E00F374ED /* LMFlowDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowDataProtocol.swift; sourceTree = "<group>"; };
-		F7F2064E1E8F576800F374ED /* LMFlowCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowCellProtocol.swift; sourceTree = "<group>"; };
+		F7F2064A1E8F505E00F374ED /* LMFlowDataServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMFlowDataServer.swift; sourceTree = "<group>"; };
 		F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF10364E74FD2AEBA1EA4A65 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,8 +393,7 @@
 		F7F206421E8F4FBC00F374ED /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				F7F2064A1E8F505E00F374ED /* LMFlowDataProtocol.swift */,
-				F7F2064E1E8F576800F374ED /* LMFlowCellProtocol.swift */,
+				F7F2064A1E8F505E00F374ED /* LMFlowDataServer.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -407,6 +406,7 @@
 				F7003AD51E95D69D00768B0E /* LMDefaultImageViewCell.swift */,
 				F7A7B1331E97302900AB83E5 /* LMTextCell.swift */,
 				F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */,
+				F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -701,7 +701,6 @@
 				F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
 				F7003AD81E960C5300768B0E /* LMColorExtension.swift in Sources */,
-				F7F2064F1E8F576800F374ED /* LMFlowCellProtocol.swift in Sources */,
 				F73502631E9F1D6100D69CD4 /* LMRoutes.swift in Sources */,
 				F7F206471E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift in Sources */,
 				F7F206251E8E2E5300F374ED /* LMBasicViewController.swift in Sources */,
@@ -713,12 +712,13 @@
 				F71AEA5E1E837F1800746158 /* LMLoginModel.swift in Sources */,
 				F71AEA5C1E837F0500746158 /* LMLoginVC.swift in Sources */,
 				F7A7B1321E97170F00AB83E5 /* LMStringExtension.swift in Sources */,
+				F7D8F4061EA4A92000E23C2B /* LMProductListFlowCell.swift in Sources */,
 				F7E706F41EA062F400F99F35 /* LMPresentVC.swift in Sources */,
 				F7E7E5C91E9CC9E9009662FA /* LMStretchImageViewCell.swift in Sources */,
 				F7F2062C1E8E36F100F374ED /* LMHomeViewController.swift in Sources */,
 				F7ED0AB91E8A0FAB001B1959 /* LMHTTPRequset.swift in Sources */,
 				F7F206461E8F4FBC00F374ED /* LMFlowCollectionView.swift in Sources */,
-				F7F2064B1E8F505E00F374ED /* LMFlowDataProtocol.swift in Sources */,
+				F7F2064B1E8F505E00F374ED /* LMFlowDataServer.swift in Sources */,
 				8F1F5F441E7180EE009771D5 /* AppDelegate.swift in Sources */,
 				F7003AD61E95D69D00768B0E /* LMDefaultImageViewCell.swift in Sources */,
 				8F127AC61E90D51700FDEF86 /* LMCurrying.swift in Sources */,

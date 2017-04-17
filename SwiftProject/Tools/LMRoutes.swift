@@ -26,7 +26,7 @@ class LMRoutes: LMRoutesAction{
     
     func routesWithUrl(url: URL?){
         guard let workUrl = url else {
-             print(">>>>>>无效的URL:\(url)")
+             print(">>>>>>无效的URL:\(String(describing: url))")
             return
         }
         if workUrl.absoluteString.whitespacesIsEmple() || !self.isLMRoutesUr(url: workUrl){
@@ -62,13 +62,9 @@ class LMRoutes: LMRoutesAction{
                 currentTopController().navigationController?.pushViewController(pushVC, animated: true)
                 
                 
-                
-                
-                
-                
             }
         }else{
-            print(">>>>>>传入无效的type:\(json["type"].string)")
+            print(">>>>>>传入无效的type:\(String(describing: json["type"].string))")
         }
         
         

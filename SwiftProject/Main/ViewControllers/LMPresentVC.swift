@@ -16,14 +16,19 @@ class LMPresentVC: UIViewController {
     
     var labelBgColor : String?
     
-    var testDic : Dictionary<String, String>?
+    var testDic : Dictionary<String, String> = Dictionary.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let btn = UIButton.init(type: .custom)
         btn.setTitle("返回", for: .normal)
-        btn.setTitleColor(UIColor.blue, for: .normal)
+        if let textColor = testDic["textColor"],
+            let font = Float((testDic["textFont"])!){
+            btn.setTitleColor(UIColor.colorWithHexString(hex:textColor ), for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(font))
+        }
+        
         self.view.addSubview(btn)
         btn.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view.snp.centerX)
@@ -40,6 +45,8 @@ class LMPresentVC: UIViewController {
             make.top.equalTo(btn.snp.bottom).offset(20)
             make.left.right.bottom.equalTo(0)
         }
+        
+        
         
     }
     

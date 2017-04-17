@@ -14,7 +14,7 @@
 			"cellHeight": "30%",
 			"cellWidth" : "70%",
 			"backgroundColor" : "090203",
-			"action":"LM://type=PresentVC&class=LMPresentVC&backgroundColor=123456&testInt=10&testDic=%7BtextCoolor%3A345678,textFont%3A18%7D",
+			"action":"LM://type=PresentVC&class=LMPresentVC&backgroundColor=123456&testInt=10&testDic=%7BtextColor%3A987654,textFont%3A30%7D",
 			"cellData" : {
 				"imageName":"http://ons1ui5s6.bkt.clouddn.com/image/lemoniconlemon.png"
 			}

@@ -23,12 +23,17 @@ class LMFlowDataServer : LMFlowDataProtocol{
     //限制外部设置
     private(set) var dataArray: [LMFlowDataModel?] = []
     
-    func updateDataArray(modelArray: [LMFlowDataModel?]) -> [LMFlowDataModel?] {
+    var cache : NSCache<AnyObject, AnyObject>? = NSCache.init()
+    
+    internal func updateDataArray(modelArray: [LMFlowDataModel?]) -> [LMFlowDataModel?] {
         dataArray = modelArray
         //在这里做缓存操作
+        
+        
         return dataArray
     }
     
+    ///MARK 插入cellData
     func insertCellData(cellData: Dictionary<String, JSON>, cellId: String) {
         for (index,model) in self.dataArray.enumerated() {
             guard let cellIdWithModel = model?.cellId else {continue}
@@ -40,10 +45,22 @@ class LMFlowDataServer : LMFlowDataProtocol{
         }
     }
     
+    ///MARK 插入模型数组
+    func insertModels(models:[LMFlowDataModel?]){
+//        var arr = dataArray + models
+       
+        for model in models {
+            dataArray.append(model)
+        }
+        
+    }
+    
+    ///MARK 跟新模型数组中某行数据
     func updateModel(index: Int, model: LMFlowDataModel?) {
         self.dataArray[index] = model
     }
     
+    ///MARK 根据cellId来获取数组下标
     func getIndex(cellId:String) -> Int? {
         for item in self.dataArray {
             guard let cellIdWithModel = item?.cellId else {
