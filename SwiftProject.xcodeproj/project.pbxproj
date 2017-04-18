@@ -31,6 +31,9 @@
 		F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A7B1331E97302900AB83E5 /* LMTextCell.swift */; };
 		F7A8B3534E5B05BCEB0AC995 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A297778F7AC07460D14E13 /* Pods_SwiftProjectTests.framework */; };
 		F7D8F4061EA4A92000E23C2B /* LMProductListFlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */; };
+		F7D8F40A1EA5A97300E23C2B /* LMCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8F4091EA5A97300E23C2B /* LMCarouselView.swift */; };
+		F7D8F40E1EA5B05800E23C2B /* LMCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8F40D1EA5B05800E23C2B /* LMCarouselCell.swift */; };
+		F7D8F4101EA5DF1B00E23C2B /* LMTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8F40F1EA5DF1B00E23C2B /* LMTimerExtension.swift */; };
 		F7E706F21E9F7A0B00F99F35 /* LMRoutesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E706F11E9F7A0B00F99F35 /* LMRoutesAction.swift */; };
 		F7E706F41EA062F400F99F35 /* LMPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E706F31EA062F400F99F35 /* LMPresentVC.swift */; };
 		F7E7E5C91E9CC9E9009662FA /* LMStretchImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */; };
@@ -100,6 +103,9 @@
 		F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStringExtension.swift; sourceTree = "<group>"; };
 		F7A7B1331E97302900AB83E5 /* LMTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTextCell.swift; sourceTree = "<group>"; };
 		F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMProductListFlowCell.swift; sourceTree = "<group>"; };
+		F7D8F4091EA5A97300E23C2B /* LMCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMCarouselView.swift; sourceTree = "<group>"; };
+		F7D8F40D1EA5B05800E23C2B /* LMCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMCarouselCell.swift; sourceTree = "<group>"; };
+		F7D8F40F1EA5DF1B00E23C2B /* LMTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTimerExtension.swift; sourceTree = "<group>"; };
 		F7E706F11E9F7A0B00F99F35 /* LMRoutesAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMRoutesAction.swift; sourceTree = "<group>"; };
 		F7E706F31EA062F400F99F35 /* LMPresentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMPresentVC.swift; sourceTree = "<group>"; };
 		F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMStretchImageViewCell.swift; sourceTree = "<group>"; };
@@ -181,7 +187,7 @@
 		8F1F5F421E7180EE009771D5 /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
-				8F1F5F711E7181DC009771D5 /* Library */,
+				F7D8F4071EA5A75B00E23C2B /* Library */,
 				8F1F5F721E7181EC009771D5 /* Macro */,
 				8F1F5F731E7181F6009771D5 /* Protocol */,
 				8F1F5F741E7181FE009771D5 /* Public */,
@@ -216,13 +222,6 @@
 				8F1F5F651E7180EE009771D5 /* Info.plist */,
 			);
 			path = SwiftProjectUITests;
-			sourceTree = "<group>";
-		};
-		8F1F5F711E7181DC009771D5 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		8F1F5F721E7181EC009771D5 /* Macro */ = {
@@ -266,6 +265,7 @@
 				F7A7B1311E97170F00AB83E5 /* LMStringExtension.swift */,
 				F73502621E9F1D6100D69CD4 /* LMRoutes.swift */,
 				F7E706F11E9F7A0B00F99F35 /* LMRoutesAction.swift */,
+				F7D8F40F1EA5DF1B00E23C2B /* LMTimerExtension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -324,6 +324,22 @@
 				F71AEA611E837FB000746158 /* LMLoginView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F7D8F4071EA5A75B00E23C2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8F4081EA5A75B00E23C2B /* LMLibrary */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		F7D8F4081EA5A75B00E23C2B /* LMLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8F4091EA5A97300E23C2B /* LMCarouselView.swift */,
+			);
+			path = LMLibrary;
 			sourceTree = "<group>";
 		};
 		F7F206261E8E36CF00F374ED /* Main */ = {
@@ -407,6 +423,7 @@
 				F7A7B1331E97302900AB83E5 /* LMTextCell.swift */,
 				F7E7E5C81E9CC9E9009662FA /* LMStretchImageViewCell.swift */,
 				F7D8F4051EA4A92000E23C2B /* LMProductListFlowCell.swift */,
+				F7D8F40D1EA5B05800E23C2B /* LMCarouselCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -694,15 +711,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
+				F7D8F40A1EA5A97300E23C2B /* LMCarouselView.swift in Sources */,
 				F72C1F1E1E9E1F62007287C6 /* LMFlowViewController.swift in Sources */,
 				F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */,
 				F7F2062E1E8E3D4D00F374ED /* LMTabBar.swift in Sources */,
 				F71AEA621E837FB000746158 /* LMLoginView.swift in Sources */,
 				F7A7B1341E97302900AB83E5 /* LMTextCell.swift in Sources */,
 				8F1F5F7D1E7185DC009771D5 /* LMTabBarController.swift in Sources */,
+				F7D8F4101EA5DF1B00E23C2B /* LMTimerExtension.swift in Sources */,
 				F7003AD81E960C5300768B0E /* LMColorExtension.swift in Sources */,
 				F73502631E9F1D6100D69CD4 /* LMRoutes.swift in Sources */,
 				F7F206471E8F4FBC00F374ED /* LMFlowCollectionViewCell.swift in Sources */,
+				F7D8F40E1EA5B05800E23C2B /* LMCarouselCell.swift in Sources */,
 				F7F206251E8E2E5300F374ED /* LMBasicViewController.swift in Sources */,
 				F7F206361E8E538800F374ED /* LMHomeView.swift in Sources */,
 				F71884CB1EA0A92600A76BE2 /* LMWebViewController.swift in Sources */,

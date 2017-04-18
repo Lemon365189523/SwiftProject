@@ -1,6 +1,15 @@
 {
 	"data": [
 		{
+			"className": "LMCarouselCell",
+			"cellHeight": "200",
+			"cellWidth" : "100%",
+			"backgroundColor" : "#8e44ad",
+			"cellData" :{
+
+			}
+		},
+		{
 			"className": "LMTextCell",
 			"cellHeight": "5",
 			"cellWidth" : "100%",
@@ -8,6 +17,12 @@
 			"cellData" :{
 				"text" : "和 C 一样，Swift 用变量存储和调用值，通过变量名来做区分。Swift 中也大量采用了值不可变的变量。它们就是所谓的常量，但是它们比 C 中的常量更加给力。当你所处理的值不需要更改时，使用常量会让你的代码更加安全、简洁地表达你的意图。"
 			}
+		},
+		{
+			"className": "间隔线",
+			"cellHeight": "5",
+			"cellWidth" : "100%",
+			"backgroundColor" : "FFFFFF",
 		},
 		{
 			"className": "LMDefaultImageViewCell",

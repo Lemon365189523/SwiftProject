@@ -46,8 +46,10 @@ class LMProductListFlowCell: LMFlowCollectionViewCell {
             })
         }
         
-        var newModel = model
-        print(model.cellData)
+        if let productId =  model.cellData?["productId"]?.string {
+            titleLB.text = "productId:" + productId
+        }
+        
         
         
     }
