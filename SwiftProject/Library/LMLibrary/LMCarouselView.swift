@@ -42,6 +42,7 @@ class LMCarouselView: UIScrollView ,UIScrollViewDelegate {
         iv.backgroundColor = UIColor.orange
         return iv
     }()//下一个
+    
     var imageUrls : [String]? {
         didSet {
             setupImageViews()

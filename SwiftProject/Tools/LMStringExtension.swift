@@ -41,8 +41,7 @@ extension String {
         return string.isEmpty
     }
     
-    
-    
+
     
 }
 

@@ -19,7 +19,7 @@ class LMCarouselCell: LMFlowCollectionViewCell {
     
     override func setDataModel(model: LMFlowDataModel, flowServer: LMFlowDataServer) {
         super.setDataModel(model: model, flowServer: flowServer)
-        carouseView.imageUrls = ["banner1"]//["banner1","banner2","banner3","banner4"]
+        carouseView.imageUrls = ["banner1","banner2","banner3","banner4"]
         carouseView.duration = 3
     }
     
