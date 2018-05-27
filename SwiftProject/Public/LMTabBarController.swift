@@ -78,6 +78,7 @@ extension LMTabBarController {
 //        tabBar.tintColor = UIColor.green
         let tabbar = LMTabBar()
         tabbar.tabbarDelegate = self
+        tabbar.tabBarDataSource = self
         self.setValue(tabbar, forKey: "tabBar")
         viewControllers = navArray
     }
@@ -90,8 +91,34 @@ extension LMTabBarController {
     }
 }
 
-extension LMTabBarController: LMTabBarDelegate {
-    func selectBtn() {
-        print("点击中间按钮")
+extension LMTabBarController: LMTabBarDelegate ,LMTabBarDataSource {
+    func customBarItem(_ tabBar: LMTabBar) -> UIView {
+        let view = UIView()
+        let img = UIImageView()
+        let title = UILabel()
+        view.addSubview(img)
+        view.addSubview(title)
+        title.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalTo(0)
+        }
+        img.snp.makeConstraints { (make) in
+            make.bottom.equalTo(title.snp.top)
+            make.height.width.equalTo(50)
+            make.top.equalTo(0)
+            make.centerX.equalToSuperview()
+        }
+        title.text = "自定义"
+        title.textAlignment = .center
+        img.backgroundColor = .red
+        view.backgroundColor = .yellow
+        return view
+    }
+    
+    func selectCustomBar(_ tabBar: LMTabBar) {
+        print("点击了自定义按钮")
+    }
+    
+    func numberOfCustomBarItem(_ tabBar: LMTabBar) -> Int {
+        return 1
     }
 }
