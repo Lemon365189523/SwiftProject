@@ -103,7 +103,7 @@ extension LMTabBarController: LMTabBarDelegate ,LMTabBarDataSource {
         }
         img.snp.makeConstraints { (make) in
             make.bottom.equalTo(title.snp.top)
-            make.height.width.equalTo(50)
+            make.height.width.equalTo(70)
             make.top.equalTo(0)
             make.centerX.equalToSuperview()
         }
