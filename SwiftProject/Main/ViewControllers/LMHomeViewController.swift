@@ -33,8 +33,9 @@ class LMHomeViewController: UIViewController {
 //        let vc = LMFlowViewController()
 //        vc.hidesBottomBarWhenPushed = true
 //        self.navigationController?.pushViewController(vc, animated: true)
-        let vc = LMDetailsVC()
+//        let vc = LMDetailsVC()
         
+        let vc = LMWebDetailsVC()
         vc.hidesBottomBarWhenPushed = true
         
         self.navigationController?.pushViewController(vc, animated: true)

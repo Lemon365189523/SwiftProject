@@ -18,6 +18,7 @@
 		8F4BEB4920CB88A900000C68 /* LMDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEB4820CB88A900000C68 /* LMDetailsVC.swift */; };
 		8F4BEB4C20CB8A2F00000C68 /* LMDynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEB4B20CB8A2F00000C68 /* LMDynamicItem.swift */; };
 		8F4BEB4F20CB9EC500000C68 /* LMHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEB4E20CB9EC500000C68 /* LMHeaderView.swift */; };
+		8FAA021C20CE8A42009B1191 /* LMWebDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA021B20CE8A42009B1191 /* LMWebDetailsVC.swift */; };
 		D8992B2B28CEEC56CA3CFA97 /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AFE17E92C4E3E4401EFD0F /* Pods_SwiftProject.framework */; };
 		F7003AD61E95D69D00768B0E /* LMDefaultImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7003AD51E95D69D00768B0E /* LMDefaultImageViewCell.swift */; };
 		F7003AD81E960C5300768B0E /* LMColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7003AD71E960C5300768B0E /* LMColorExtension.swift */; };
@@ -90,6 +91,7 @@
 		8F4BEB4820CB88A900000C68 /* LMDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMDetailsVC.swift; sourceTree = "<group>"; };
 		8F4BEB4B20CB8A2F00000C68 /* LMDynamicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMDynamicItem.swift; sourceTree = "<group>"; };
 		8F4BEB4E20CB9EC500000C68 /* LMHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMHeaderView.swift; sourceTree = "<group>"; };
+		8FAA021B20CE8A42009B1191 /* LMWebDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMWebDetailsVC.swift; sourceTree = "<group>"; };
 		9214216AD84F0E52F37FDFBB /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B8E2B38E9B144D7CDE4BEF04 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E70A1AC1F994421176BCA32A /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4BEB4820CB88A900000C68 /* LMDetailsVC.swift */,
+				8FAA021B20CE8A42009B1191 /* LMWebDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				F7612F3D1E83B48700E50C00 /* Header.swift in Sources */,
 				F7D8F40A1EA5A97300E23C2B /* LMCarouselView.swift in Sources */,
 				F72C1F1E1E9E1F62007287C6 /* LMFlowViewController.swift in Sources */,
+				8FAA021C20CE8A42009B1191 /* LMWebDetailsVC.swift in Sources */,
 				8F4BEB4C20CB8A2F00000C68 /* LMDynamicItem.swift in Sources */,
 				F733CE471E84B8960075553B /* LMKeyboardProtocol.swift in Sources */,
 				F7F2062E1E8E3D4D00F374ED /* LMTabBar.swift in Sources */,
